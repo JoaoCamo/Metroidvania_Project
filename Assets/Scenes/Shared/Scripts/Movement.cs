@@ -7,9 +7,8 @@ public class Movement : Fighter
     private Vector3 originalSize;
     protected BoxCollider2D BoxCollider;
     protected Vector3 movement;
-    protected RaycastHit2D hit;
     protected Animator animator;
-    public float xSpeed = 1f;
+    public float xSpeed;
 
     protected virtual void Start()
     {
@@ -18,6 +17,7 @@ public class Movement : Fighter
         animator = GetComponent<Animator>();
     }
 
+    //Movimento do player e para futura implementação do knockback
     protected virtual void UpdateMotor(Vector3 Input)
     {
         movement = new Vector3(Input.x * xSpeed,0,0);
@@ -36,11 +36,7 @@ public class Movement : Fighter
         movement += pushDirection;
 
         pushDirection = Vector3.Lerp(pushDirection,Vector3.zero,pushRecoverySpeed);
-
-        hit = Physics2D.BoxCast(transform.position, BoxCollider.size, 0, new Vector2(movement.x, 0), Mathf.Abs(movement.x * Time.deltaTime), LayerMask.GetMask("Actor", "Blocking"));
-        if(hit.collider == null)
-        {
-            transform.Translate(movement.x * Time.deltaTime, 0, 0);
-        }
+        
+        transform.Translate(movement.x * Time.deltaTime, 0, 0);
     }
 }
