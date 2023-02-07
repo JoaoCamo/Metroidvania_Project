@@ -17,7 +17,7 @@ public class Movement : Fighter
         animator = GetComponent<Animator>();
     }
 
-    //Movimento do player e para futura implementação do knockback
+    //Movimento e futura implementação do knockback
     protected virtual void UpdateMotor(Vector3 Input)
     {
         movement = new Vector3(Input.x * xSpeed,0,0);
@@ -37,6 +37,9 @@ public class Movement : Fighter
 
         pushDirection = Vector3.Lerp(pushDirection,Vector3.zero,pushRecoverySpeed);
         
-        transform.Translate(movement.x * Time.deltaTime, 0, 0);
+        if(movement.x > 0 || movement.x < 0)
+        {
+            transform.Translate(movement.x * Time.deltaTime, 0, 0);
+        }
     }
 }

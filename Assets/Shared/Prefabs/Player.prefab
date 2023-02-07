@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1493319655609269542}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Fighter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -168,8 +168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9aa9e4763a82f4582688f41692e4f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoint: 10
-  maxHitpoint: 10
+  hitpoint: 100
+  maxHitpoint: 100
   pushRecoverySpeed: 0.2
   xSpeed: 1.5
   attacking: 0

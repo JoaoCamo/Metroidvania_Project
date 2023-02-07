@@ -13,7 +13,7 @@ public class Player : Movement
 
         if(alive && !attacking)
         {
-            UpdateMotor(new Vector3(x,0,0));
+           UpdateMotor(new Vector3(x,0,0));
         }
     }
 
@@ -23,5 +23,16 @@ public class Player : Movement
         {
             animator.SetTrigger("attack");
         }
+    }
+
+    protected override void ReceiveDamage(Damage dmg)
+    {
+        if(!alive)
+        {
+            return;
+        }
+
+        base.ReceiveDamage(dmg);
+        GameManager.instance.HealthBarChange();
     }
 }
