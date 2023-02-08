@@ -17,7 +17,7 @@ public class Movement : Fighter
         animator = GetComponent<Animator>();
     }
 
-    //Movimento e futura implementação do knockback
+    //Movimento e knockback
     protected virtual void UpdateMotor(Vector3 Input)
     {
         movement = new Vector3(Input.x * xSpeed,0,0);

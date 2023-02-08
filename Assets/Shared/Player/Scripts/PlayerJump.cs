@@ -38,7 +38,7 @@ public class PlayerJump : MonoBehaviour
     //Checar se está no chão
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Ground"))
+        if(other.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
             animator.SetTrigger("hitGround");
@@ -48,7 +48,7 @@ public class PlayerJump : MonoBehaviour
     //Checar se saiu do chão
     private void OnCollisionExit2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Ground"))
+        if(other.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
             animator.ResetTrigger("hitGround");

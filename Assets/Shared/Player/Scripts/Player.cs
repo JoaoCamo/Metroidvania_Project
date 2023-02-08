@@ -6,6 +6,7 @@ public class Player : Movement
 {
     private bool alive = true;
     public bool attacking = false;
+    public bool tookDamage = false;
 
     private void FixedUpdate()
     {
@@ -19,7 +20,7 @@ public class Player : Movement
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.X))
+        if(Input.GetKeyDown(KeyCode.X) && !tookDamage)
         {
             animator.SetTrigger("attack");
         }
@@ -31,7 +32,8 @@ public class Player : Movement
         {
             return;
         }
-
+        
+        animator.SetTrigger("hit");
         base.ReceiveDamage(dmg);
         GameManager.instance.HealthBarChange();
     }
