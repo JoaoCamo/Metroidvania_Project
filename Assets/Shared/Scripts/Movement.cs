@@ -8,6 +8,7 @@ public class Movement : Fighter
     protected BoxCollider2D BoxCollider;
     protected Vector3 movement;
     protected Animator animator;
+    public bool hasMovingAni;
     public float xSpeed;
 
     protected virtual void Start()
@@ -25,11 +26,17 @@ public class Movement : Fighter
             if(movement.x > 0)
             {
                 transform.localScale = originalSize;
-                animator.SetBool("moving", true);
+                if(hasMovingAni)
+                {
+                    animator.SetBool("moving", true);
+                }
             } else if(movement.x < 0) {
                 transform.localScale = new Vector3(originalSize.x * -1, originalSize.y, originalSize.z);
-                animator.SetBool("moving", true);
-            } else if( movement.x == 0) {
+                if(hasMovingAni)
+                {
+                    animator.SetBool("moving", true);
+                }
+            } else if( movement.x == 0 && hasMovingAni) {
                 animator.SetBool("moving", false);
             }
 

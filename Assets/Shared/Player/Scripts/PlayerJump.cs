@@ -24,11 +24,11 @@ public class PlayerJump : MonoBehaviour
     //Pulo do player
     private void jump()
     {
-        if(Input.GetKeyDown(KeyCode.Z) && isGrounded)
+        if(Input.GetKeyDown(KeyCode.Z) && isGrounded && !gameObject.GetComponent<Player>().attacking)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpVelocity);
             animator.SetTrigger("jump");
-        } else if(Input.GetKeyDown(KeyCode.Z) && hasDoubleJump && !isGrounded)
+        } else if(Input.GetKeyDown(KeyCode.Z) && hasDoubleJump && !isGrounded && !gameObject.GetComponent<Player>().attacking)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpVelocity);
             animator.SetTrigger("jump");
