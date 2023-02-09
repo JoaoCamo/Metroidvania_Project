@@ -17,7 +17,7 @@ public class EnemyHitBox : Collidable
 
     protected override void OnCollide(Collider2D coll)
     {
-        if(coll.tag == "Fighter" && coll.name == "Player")
+        if(coll.gameObject.CompareTag("Fighter") && coll.name == "Player")
         {
             if(hasAtackAni)
             {

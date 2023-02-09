@@ -43,3 +43,24 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 2646656873
+    locked: 0
+  - name: Middleground
+    uniqueID: 1862847517
+    locked: 0
+  - name: Buildings
+    uniqueID: 3482265041
+    locked: 0
+  - name: BehindGround
+    uniqueID: 310802117
+    locked: 0
+  - name: BehindPlayer
+    uniqueID: 1295561769
+    locked: 0
+  - name: Player
+    uniqueID: 620255681
+    locked: 0
+  - name: OnFrontOfPlayer
+    uniqueID: 3684400261
+    locked: 0

@@ -9,7 +9,7 @@ public class PlayerAttack : Collidable
 
     protected override void OnCollide(Collider2D coll)
     {
-        if(coll.tag == "Fighter")
+        if(coll.gameObject.CompareTag("Fighter"))
         {
             if(coll.name == "Player")
             {

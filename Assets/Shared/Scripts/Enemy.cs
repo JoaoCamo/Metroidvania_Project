@@ -15,6 +15,8 @@ public class Enemy : Movement
     private BoxCollider2D hitbox;
     private Collider2D[] Hits = new Collider2D[10];
 
+    private int enemyGoldDrop;
+
     protected override void Start()
     {
         base.Start();
@@ -71,6 +73,8 @@ public class Enemy : Movement
     {
         animator.SetTrigger("dead");
         alive = false;
+        enemyGoldDrop = Random.Range(2,8);
+        GameManager.instance.playerGold += enemyGoldDrop;
     }
 
     private void destroy()

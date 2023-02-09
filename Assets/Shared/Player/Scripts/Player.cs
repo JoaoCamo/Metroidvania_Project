@@ -8,13 +8,16 @@ public class Player : Movement
     public bool attacking = false;
     public bool tookDamage = false;
 
+    private float hitCooldown = 0.5f;
+    private float lastSwing;
+
     private void FixedUpdate()
     {
-        float x = Input.GetAxisRaw("Horizontal");
+        float xInput = Input.GetAxisRaw("Horizontal");
 
         if(alive && !attacking)
         {
-           UpdateMotor(new Vector3(x,0,0));
+           UpdateMotor(new Vector3(xInput,0,0));
         }
     }
 
@@ -22,7 +25,11 @@ public class Player : Movement
     {
         if(Input.GetKeyDown(KeyCode.X) && !tookDamage)
         {
-            animator.SetTrigger("attack");
+            if(Time.time - lastSwing > hitCooldown)
+            {
+                lastSwing = Time.time;
+                animator.SetTrigger("attack");
+            }
         }
     }
 
@@ -35,6 +42,12 @@ public class Player : Movement
         
         animator.SetTrigger("hit");
         base.ReceiveDamage(dmg);
-        GameManager.instance.HealthBarChange();
+        HealthBarChange();
+    }
+
+    private void HealthBarChange()
+    {
+        float ratio = (float)hitpoint / (float)maxHitpoint;
+        GameManager.instance.mc.healthBar.localScale = new Vector3(ratio, 1, 1);
     }
 }
