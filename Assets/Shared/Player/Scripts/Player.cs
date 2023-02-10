@@ -8,6 +8,8 @@ public class Player : Movement
     public bool attacking = false;
     public bool tookDamage = false;
 
+    public int armorLevel = 0;
+
     private float hitCooldown = 0.5f;
     private float lastSwing;
 
@@ -15,7 +17,7 @@ public class Player : Movement
     {
         float xInput = Input.GetAxisRaw("Horizontal");
 
-        if(alive && !attacking)
+        if(alive && !attacking && !GameManager.instance.menuOpen)
         {
            UpdateMotor(new Vector3(xInput,0,0));
         }
@@ -45,9 +47,16 @@ public class Player : Movement
         HealthBarChange();
     }
 
-    private void HealthBarChange()
+    public void HealthBarChange()
     {
         float ratio = (float)hitpoint / (float)maxHitpoint;
         GameManager.instance.mc.healthBar.localScale = new Vector3(ratio, 1, 1);
+    }
+
+    public void upgradeArmor()
+    {
+        armorLevel++;
+        maxHitpoint += 10;
+        hitpoint = maxHitpoint;
     }
 }

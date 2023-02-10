@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public Player player;
 
     public int playerGold;
+    public bool menuOpen = false;
 
     private void Awake()
     {

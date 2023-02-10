@@ -9,6 +9,7 @@ public class PlayerJump : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     public bool hasDoubleJump = false;
+    public bool doubleJumped = false;
 
     private void Start()
     {
@@ -24,12 +25,13 @@ public class PlayerJump : MonoBehaviour
     //Pulo do player
     private void jump()
     {
-        if(Input.GetKeyDown(KeyCode.Z) && isGrounded && !gameObject.GetComponent<Player>().attacking)
+        if(Input.GetKeyDown(KeyCode.Z) && isGrounded && !gameObject.GetComponent<Player>().attacking && !GameManager.instance.menuOpen)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpVelocity);
             animator.SetTrigger("jump");
-        } else if(Input.GetKeyDown(KeyCode.Z) && hasDoubleJump && !isGrounded && !gameObject.GetComponent<Player>().attacking)
+        } else if(Input.GetKeyDown(KeyCode.Z) && hasDoubleJump && !doubleJumped && !isGrounded && !gameObject.GetComponent<Player>().attacking)
         {
+            doubleJumped = true;
             rb.velocity = new Vector2(rb.velocity.x, jumpVelocity);
             animator.SetTrigger("jump");
         }
@@ -40,6 +42,7 @@ public class PlayerJump : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Ground"))
         {
+            doubleJumped = false;
             isGrounded = true;
             animator.SetTrigger("hitGround");
         }

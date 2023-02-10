@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerAttack : Collidable
 {
-    public int SwordDamage;
+    public int[] SwordDamage = {1,3,5,7,10};
+    public int swordLevel = 0;
     private float SwordKnockback = 10f;
 
     protected override void OnCollide(Collider2D coll)
@@ -17,11 +18,19 @@ public class PlayerAttack : Collidable
             }
             Damage dmg = new Damage
             {
-                damageAmount = SwordDamage,
+                damageAmount = SwordDamage[swordLevel],
                 origin = transform.position,
                 pushForce = SwordKnockback
             };
             coll.SendMessage("ReceiveDamage", dmg);
+        }
+    }
+
+    public void upgradeSword()
+    {
+        if(swordLevel < (SwordDamage.Length-1))
+        {
+           swordLevel++;
         }
     }
 }

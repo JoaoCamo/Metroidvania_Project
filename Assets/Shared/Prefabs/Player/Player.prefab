@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5306842963618626451}
   - component: {fileID: 5306842963618626448}
   - component: {fileID: 1493319655609269542}
+  - component: {fileID: 7149946629900273244}
   m_Layer: 0
   m_Name: Player
   m_TagString: Fighter
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 620255681
-  m_SortingLayer: 2
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3502aca5aed8654419afe77fb41dcd05, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -176,6 +177,7 @@ MonoBehaviour:
   xSpeed: 1.5
   attacking: 0
   tookDamage: 0
+  armorLevel: 0
 --- !u!114 &1493319655609269542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,6 +191,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasDoubleJump: 0
+  doubleJumped: 0
+--- !u!114 &7149946629900273244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5306842963618626478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd08eaa1bc45bd4890347387de9a1d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carriedPotions: 
+  selectedPotion: 1
 --- !u!1 &7372219439428022924
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,4 +344,5 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  SwordDamage: 1
+  SwordDamage: 010000000300000005000000070000000a000000
+  swordLevel: 0
