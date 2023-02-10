@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
 
     public int playerGold;
     public bool menuOpen = false;
+    public bool stage1 = false;
+    public bool stage2 = false;
+    public bool stage3 = false;
 
     private void Awake()
     {
