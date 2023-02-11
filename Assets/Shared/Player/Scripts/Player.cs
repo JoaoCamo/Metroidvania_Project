@@ -8,6 +8,7 @@ public class Player : Movement
     public bool attacking = false;
     public bool tookDamage = false;
 
+    public bool hasSpeedBoots = false;
     public int armorLevel = 0;
 
     private float hitCooldown = 0.5f;

@@ -7,6 +7,7 @@ public class ArtifactVendor : MonoBehaviour
 {
     public Animator animator;
     public Text doubleJumpPriceText;
+    public Text speedBootsPriceText;
 
     private void OnTriggerEnter2D(Collider2D coll)
     {
@@ -39,11 +40,31 @@ public class ArtifactVendor : MonoBehaviour
         }
     }
 
+    public void unlockSpeedBoots()
+    {
+        if(GameManager.instance.player.hasSpeedBoots)
+        {
+            return;
+        }
+        if(GameManager.instance.playerGold >= 400)
+        {
+            GameManager.instance.playerGold -= 400;
+            GameManager.instance.player.hasSpeedBoots = true;
+            GameManager.instance.player.xSpeed = 2f;
+        } else {
+            return;
+        }
+    }
+
     private void updateMenu()
     {
         if(GameManager.instance.player.gameObject.GetComponent<PlayerJump>().hasDoubleJump)
         {
             doubleJumpPriceText.text = "---";
+        }
+        if(GameManager.instance.player.hasSpeedBoots)
+        {
+            speedBootsPriceText.text = "---";
         }
     }
 }
