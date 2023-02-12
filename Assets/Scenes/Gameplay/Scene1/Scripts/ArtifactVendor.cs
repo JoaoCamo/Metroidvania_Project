@@ -51,6 +51,7 @@ public class ArtifactVendor : MonoBehaviour
             GameManager.instance.playerGold -= 400;
             GameManager.instance.player.hasSpeedBoots = true;
             GameManager.instance.player.xSpeed = 2f;
+            updateMenu();
         } else {
             return;
         }
