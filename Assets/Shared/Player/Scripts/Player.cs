@@ -48,6 +48,13 @@ public class Player : Movement
         HealthBarChange();
     }
 
+    protected override void death()
+    {
+        alive = false;
+        GameManager.instance.menuOpen = true;
+        GameManager.instance.mc.deathScreen.SetTrigger("show");
+    }
+
     public void HealthBarChange()
     {
         float ratio = (float)hitpoint / (float)maxHitpoint;
