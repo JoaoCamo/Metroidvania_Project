@@ -8,6 +8,7 @@ public class EnemyHitBox : Collidable
     public float pushForce;
     public bool hasAtackAni;
     private Animator animator;
+    public bool canHit = true;
 
     protected override void Start()
     {
@@ -17,7 +18,7 @@ public class EnemyHitBox : Collidable
 
     protected override void OnCollide(Collider2D coll)
     {
-        if(coll.gameObject.CompareTag("Fighter") && coll.name == "Player")
+        if(coll.gameObject.CompareTag("Fighter") && coll.name == "Player" && canHit)
         {
             if(hasAtackAni)
             {

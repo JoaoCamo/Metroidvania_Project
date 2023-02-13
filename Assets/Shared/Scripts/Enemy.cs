@@ -73,6 +73,7 @@ public class Enemy : Movement
     {
         animator.SetTrigger("dead");
         alive = false;
+        gameObject.GetComponent<EnemyHitBox>().canHit = false;
         enemyGoldDrop = Random.Range(2,8);
         GameManager.instance.playerGold += enemyGoldDrop;
     }

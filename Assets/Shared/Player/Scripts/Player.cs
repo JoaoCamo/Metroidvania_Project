@@ -60,6 +60,7 @@ public class Player : Movement
     protected override void death()
     {
         alive = false;
+        animator.SetTrigger("dead");
         GameManager.instance.menuOpen = true;
         GameManager.instance.mc.deathScreen.SetTrigger("show");
     }
@@ -75,5 +76,19 @@ public class Player : Movement
         armorLevel++;
         maxHitpoint += 10;
         hitpoint = maxHitpoint;
+    }
+
+    public void loadHealth()
+    {
+        maxHitpoint += (armorLevel*10);
+        hitpoint = maxHitpoint;
+    }
+
+    public void respawn()
+    {
+        animator.SetTrigger("respawn");
+        hitpoint = maxHitpoint;
+        HealthBarChange();
+        alive = true;
     }
 }

@@ -201,8 +201,8 @@ MonoBehaviour:
   maxHitpoint: 2
   pushRecoverySpeed: 0.2
   hasMovingAni: 1
-  xSpeed: 1.1
-  trigger: 2
+  xSpeed: 1.5
+  trigger: 1
   chase: 4
   filter:
     useTriggers: 0

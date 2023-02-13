@@ -44,4 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cbd4e24daba4c8439414eb4dbd284d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mc: {fileID: 0}
   player: {fileID: 0}
+  HUD: {fileID: 0}
+  MainCamera: {fileID: 0}
+  playerGold: 0
+  menuOpen: 1
+  stage1: 0
+  stage2: 0
+  stage3: 0

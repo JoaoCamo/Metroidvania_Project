@@ -25,5 +25,8 @@ public class Boss : Enemy
         } else {
             GameManager.instance.stage3 = true;
         }
+
+        GameManager.instance.menuOpen = true;
+        GameManager.instance.mc.stageComplete.SetTrigger("show");
     }
 }

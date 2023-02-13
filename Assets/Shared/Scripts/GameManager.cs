@@ -10,9 +10,10 @@ public class GameManager : MonoBehaviour
     public MenuController mc;
     public Player player;
     public GameObject HUD;
+    public MusicPlayer mp;
 
     public int playerGold;
-    public bool menuOpen = false;
+    public bool menuOpen = true;
     public bool stage1 = false;
     public bool stage2 = false;
     public bool stage3 = false;
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
             Destroy(player.gameObject);
             Destroy(mc.gameObject);
             Destroy(HUD);
+            Destroy(mp.gameObject);
         }
         instance = this;
 
@@ -32,8 +34,8 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(player.gameObject);
         DontDestroyOnLoad(mc.gameObject);
         DontDestroyOnLoad(HUD);
+        DontDestroyOnLoad(mp.gameObject);
 
-        SceneManager.sceneLoaded += loadSaveGame;
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -41,8 +43,10 @@ public class GameManager : MonoBehaviour
     {
         mc.deathScreen.SetTrigger("hide");
         menuOpen = false;
-        player.hitpoint = player.maxHitpoint;
+        player.respawn();
         SceneManager.LoadScene("Scene1");
+        mp.audioSource.clip = mp.music[1];
+        mp.audioSource.Play();
     }
 
     public void OnSceneLoaded(Scene save, LoadSceneMode mode)
@@ -98,6 +102,7 @@ public class GameManager : MonoBehaviour
         playerGold = int.Parse(saveData[3]);
         player.hasSpeedBoots = bool.Parse(saveData[4]);
         player.armorLevel = int.Parse(saveData[5]);
+        player.loadHealth();
         player.gameObject.GetComponent<PlayerJump>().hasDoubleJump = bool.Parse(saveData[6]);
         player.gameObject.transform.GetChild(0).GetComponent<PlayerAttack>().swordLevel = int.Parse(saveData[7]);
 
@@ -112,6 +117,39 @@ public class GameManager : MonoBehaviour
             }
             player.gameObject.GetComponent<PlayerBuffController>().UpdatePotionAni();
         }
+    }
+
+    public void newGame()
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene("Scene1");
+        mp.audioSource.clip = mp.music[1];
+        mp.audioSource.Play();
+    }
+
+    public void LoadGame()
+    {
+        SceneManager.sceneLoaded += loadSaveGame;
+        SceneManager.LoadScene("Scene1");
+        menuOpen = false;
+        mp.audioSource.clip = mp.music[1];
+        mp.audioSource.Play();
+    }
+
+    public void returnToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void returnToCity()
+    {
+        mc.stageComplete.SetTrigger("hide");
+        menuOpen = false;
+        player.hitpoint = player.maxHitpoint;
+        player.HealthBarChange();
+        SceneManager.LoadScene("Scene1");
+        mp.audioSource.clip = mp.music[1];
+        mp.audioSource.Play();
     }
 
     public void exit()
