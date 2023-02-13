@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5378295787781133623}
   - component: {fileID: 5378295787781133616}
   - component: {fileID: 5378295787781133617}
-  - component: {fileID: 5378295787781133618}
+  - component: {fileID: 3695435220640009139}
   - component: {fileID: 5378295787781133619}
   m_Layer: 0
   m_Name: Stage1Boss
@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5378295787781133612}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.38482064, y: 0.35, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -162,10 +162,10 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  damage: 3
+  damage: 4
   pushForce: 10
   hasAtackAni: 1
---- !u!114 &5378295787781133618
+--- !u!114 &3695435220640009139
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,16 +174,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 5378295787781133612}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b59e48d24b89ccf448b37467de333335, type: 3}
+  m_Script: {fileID: 11500000, guid: cde69d580c6683046b54c35dff2d8f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoint: 30
-  maxHitpoint: 30
-  pushRecoverySpeed: 0.2
+  hitpoint: 40
+  maxHitpoint: 40
+  pushRecoverySpeed: 0.8
   hasMovingAni: 0
   xSpeed: 1
-  trigger: 2
-  chase: 3
+  trigger: 1
+  chase: 1.5
   filter:
     useTriggers: 0
     useLayerMask: 0
@@ -198,6 +198,10 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  stage1: 1
+  stage2: 0
+  stage3: 0
+  bossGold: 75
 --- !u!95 &5378295787781133619
 Animator:
   serializedVersion: 4

@@ -23,7 +23,7 @@ public class StageSelector : MonoBehaviour
     public void exitMenu()
     {
         GameManager.instance.menuOpen = false;
-        animator.SetTrigger("hide");   
+        animator.SetTrigger("hide");
     }
 
     public void updateMenu()
@@ -47,6 +47,7 @@ public class StageSelector : MonoBehaviour
 
     public void loadStage1()
     {
+        GameManager.instance.menuOpen = false;
         SceneManager.LoadScene("Stage1");
     }
 
@@ -54,6 +55,7 @@ public class StageSelector : MonoBehaviour
     {
         if(GameManager.instance.stage1)
         {
+            GameManager.instance.menuOpen = false;
             SceneManager.LoadScene("Stage2");
         }
     }
@@ -62,6 +64,7 @@ public class StageSelector : MonoBehaviour
     {
         if(GameManager.instance.stage2)
         {
+            GameManager.instance.menuOpen = false;
             SceneManager.LoadScene("Stage3");
         }
     }
@@ -70,6 +73,7 @@ public class StageSelector : MonoBehaviour
     {
         if(GameManager.instance.stage3)
         {
+            GameManager.instance.menuOpen = false;
             SceneManager.LoadScene("Stage4");
         }
     }

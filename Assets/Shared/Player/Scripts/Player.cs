@@ -11,8 +11,17 @@ public class Player : Movement
     public bool hasSpeedBoots = false;
     public int armorLevel = 0;
 
-    private float hitCooldown = 0.5f;
+    private float hitCooldown = 0.75f;
     private float lastSwing;
+    
+    protected override void Start()
+    {
+        base.Start();
+        if(hasSpeedBoots)
+        {
+            xSpeed = 2f;
+        }
+    }
 
     private void FixedUpdate()
     {

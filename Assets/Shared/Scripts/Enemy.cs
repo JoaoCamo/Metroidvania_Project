@@ -10,12 +10,12 @@ public class Enemy : Movement
     private bool colliding;
     private Transform playerTransform;
     private Vector3 startingPosition;
-    private bool alive = true;
+    protected bool alive = true;
     public ContactFilter2D filter;
     private BoxCollider2D hitbox;
     private Collider2D[] Hits = new Collider2D[10];
 
-    private int enemyGoldDrop;
+    protected int enemyGoldDrop;
 
     protected override void Start()
     {
