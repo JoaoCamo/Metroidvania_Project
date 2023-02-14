@@ -19,6 +19,8 @@ public class ReturnToSpawn : Collidable
                 GameManager.instance.player.hitpoint -= 3;
             }
             GameManager.instance.player.HealthBarChange();
+        } else if(coll.gameObject.CompareTag("Fighter")) {
+            Destroy(coll.gameObject);
         }
     }
 }

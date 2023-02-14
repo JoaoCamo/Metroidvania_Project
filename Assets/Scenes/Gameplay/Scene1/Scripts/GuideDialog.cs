@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GuideDialog : MonoBehaviour
+public class GuideDialog : Collidable
 {
     public Animator animator;
 
@@ -13,8 +13,9 @@ public class GuideDialog : MonoBehaviour
     public Text dialogTitle;
     public Text dialogBox;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         if(!GameManager.instance.mc.initialDialog)
         {
             GameManager.instance.menuOpen = true;
@@ -24,20 +25,23 @@ public class GuideDialog : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    protected override void OnCollide(Collider2D coll)
     {
-        GameManager.instance.menuOpen = true;
-        if(GameManager.instance.stage3)
+        if(Input.GetKeyDown(KeyCode.E) && !GameManager.instance.menuOpen && coll.name == "Player")
         {
-            stage4Phrase();
-        } else if(GameManager.instance.stage2) {
-            stage3Phrase();
-        } else if(GameManager.instance.stage1) {
-            stage2Phrase();
-        } else{
-            stage1Phrase();
+            GameManager.instance.menuOpen = true;
+            if(GameManager.instance.stage3)
+            {
+                stage4Phrase();
+            } else if(GameManager.instance.stage2) {
+                stage3Phrase();
+            } else if(GameManager.instance.stage1) {
+                stage2Phrase();
+            } else{
+                stage1Phrase();
+            }
+            animator.SetTrigger("show");
         }
-        animator.SetTrigger("show");
     }
 
     public void exitMenu()

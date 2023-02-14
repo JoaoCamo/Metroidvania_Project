@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Alchemist : MonoBehaviour
+public class Alchemist : Collidable
 {
     public Animator animator;
 
     public Text healthPotionPriceText;
     public Text strengthPotionPriceText;
 
-    private void OnTriggerEnter2D(Collider2D coll)
+    protected override void OnCollide(Collider2D coll)
     {
-        if(coll.name == "Player" && !GameManager.instance.menuOpen)
+        if(Input.GetKeyDown(KeyCode.E) && !GameManager.instance.menuOpen && coll.name == "Player")
         {
             updateMenu();
             animator.SetTrigger("show");

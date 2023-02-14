@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Blacksmith : MonoBehaviour
+public class Blacksmith : Collidable
 {
     private int[] swordPrices = {25,45,70,110,200};
     private int[] armorPrices = {35,50,80,115,190};
@@ -12,9 +12,9 @@ public class Blacksmith : MonoBehaviour
     public Text swordPriceText;
     public Text armorPriceText;
 
-    private void OnTriggerEnter2D(Collider2D coll)
+    protected override void OnCollide(Collider2D coll)
     {
-        if(coll.name == "Player" && !GameManager.instance.menuOpen)
+        if(Input.GetKeyDown(KeyCode.E) && !GameManager.instance.menuOpen && coll.name == "Player")
         {
             updateMenu();
             animator.SetTrigger("show");
