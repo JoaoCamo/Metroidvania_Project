@@ -63,6 +63,7 @@ public class Player : Movement
         animator.SetTrigger("dead");
         GameManager.instance.menuOpen = true;
         GameManager.instance.mc.deathScreen.SetTrigger("show");
+        GameManager.instance.playerGold -= 20;
     }
 
     public void HealthBarChange()

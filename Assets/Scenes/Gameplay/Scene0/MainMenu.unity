@@ -497,8 +497,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1747398732}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1365898565}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: LoadGame
         m_Mode: 1
         m_Arguments:
@@ -2683,6 +2683,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 944652090}
     - target: {fileID: 8818068977470559966, guid: c6f5187d6724da744a72271e2f44fe37, type: 3}
+      propertyPath: mainMenu
+      value: 
+      objectReference: {fileID: 739211169}
+    - target: {fileID: 8818068977470559966, guid: c6f5187d6724da744a72271e2f44fe37, type: 3}
       propertyPath: MainCamera
       value: 
       objectReference: {fileID: 145530981}
@@ -2993,8 +2997,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1747398732}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1365898565}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: newGame
         m_Mode: 1
         m_Arguments:

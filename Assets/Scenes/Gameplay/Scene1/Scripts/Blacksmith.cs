@@ -54,6 +54,7 @@ public class Blacksmith : MonoBehaviour
         {
             GameManager.instance.playerGold -= armorPrices[GameManager.instance.player.armorLevel];
             GameManager.instance.player.upgradeArmor();
+            GameManager.instance.player.HealthBarChange();
             updateMenu();
         } else {
             return;

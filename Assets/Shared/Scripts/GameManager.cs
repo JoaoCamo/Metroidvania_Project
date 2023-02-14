@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public bool stage2 = false;
     public bool stage3 = false;
 
-    private void Awake()
+    private void Start()
     {
         if(GameManager.instance != null)
         {
@@ -121,7 +121,7 @@ public class GameManager : MonoBehaviour
 
     public void newGame()
     {
-        PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteKey("SaveGame");
         SceneManager.LoadScene("Scene1");
         mp.audioSource.clip = mp.music[1];
         mp.audioSource.Play();
@@ -139,6 +139,8 @@ public class GameManager : MonoBehaviour
     public void returnToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+        mp.audioSource.clip = mp.music[0];
+        mp.audioSource.Play();
     }
 
     public void returnToCity()

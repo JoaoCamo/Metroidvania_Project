@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -15,5 +16,15 @@ public class MainMenu : MonoBehaviour
         } else {
             load.interactable = false;
         }
+    }
+
+    public void newGame()
+    {
+        GameManager.instance.newGame();
+    }
+
+    public void LoadGame()
+    {
+        GameManager.instance.LoadGame();
     }
 }

@@ -206,7 +206,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9efe83ce89c0a434eb77107088022ebe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.39, y: 0.52}
@@ -274,21 +274,21 @@ MonoBehaviour:
     voc\xEA se depara com muitos avisos de for\xE7as sombrias em um local sagrado
     e uma recompensa para quem os expurgar. Logo voc\xEA parte para obter mais informa\xE7\xF5es."
   - "Sauda\xE7\xF5es aventureira, presumo que est\xE1 atr\xE1s da recompensa, n\xE3o?
-    As colinas magicas est\xE3o sendo alvo de for\xE7as sombrias, para expurgalos
-    voc\xEA deve encontrar a assombra\xE7\xE3o que as comanda e destruila, fa\xE7a
+    As colinas magicas est\xE3o sendo alvo de for\xE7as sombrias, para expurga-los
+    voc\xEA deve encontrar a assombra\xE7\xE3o que as comanda e destrui-la, fa\xE7a
     isso e garanto que o rei a dar\xE1 uma grande recompensa. E caso precise a cidade
-    oferece muitos servicos para auxiliar sua jornada"
+    oferece muitos servi\xE7os para auxiliar sua jornada"
   - "Excelente trabalho, aquelas assombra\xE7\xF5es certamente ir\xE3o pensar duas
-    vezes antes de tentar algo denovo. Agora caso esteja em busca de mais aventuras
+    vezes antes de tentar algo de novo. Agora caso esteja em busca de mais aventuras
     os batedores do rei est\xE3o seguindo os rastro deste ataque, nesse momento eles
-    est\xE3o no Pantano dos Condenados."
-  - "Os batedores do rei encontraram um lugar esquecido, por\xE9m ao foram disimados
+    est\xE3o no P\xE2ntano dos Condenados. "
+  - "Os batedores do rei encontraram um lugar esquecido, por\xE9m ao foram dizimados
     por um entidade desconhecida, derrame seu sangue e traga-o para que nossa alquimista
     possa descobrir suas origens."
-  - "Aventureira, a an\xE1lise do sangue aponta para um Clan de vampiros ao norte
+  - "Aventureira, a an\xE1lise do sangue aponta para um Cl\xE3 de vampiros ao norte
     sua espada est\xE1 banhada com luz pelo nosso sacerdote, a imploramos v\xE1 para
-    esse clan e o destrua, pois garento que a cidade de Lugnica ser\xE1 eternamente
-    grata."
+    esse cl\xE3 e o destrua, pois garanto que a cidade de Lugnica ser\xE1 eternamente
+    grata. "
   dialogTitle: {fileID: 1413182152}
   dialogBox: {fileID: 1643281306}
 --- !u!1 &20221137

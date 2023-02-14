@@ -15,6 +15,7 @@ public class ArtifactVendor : MonoBehaviour
         {
             animator.SetTrigger("show");
             GameManager.instance.menuOpen = true;
+            updateMenu();
         }    
     }
 
