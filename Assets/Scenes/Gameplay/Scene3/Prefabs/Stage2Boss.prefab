@@ -14,10 +14,10 @@ GameObject:
   - component: {fileID: 509857699002177987}
   - component: {fileID: 509857699002177986}
   - component: {fileID: 509857699002177989}
-  - component: {fileID: 509857699002177988}
+  - component: {fileID: 5901371027975141888}
   m_Layer: 0
   m_Name: Stage2Boss
-  m_TagString: Untagged
+  m_TagString: Fighter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7a1c86dca7e8cff4d93b3a21347bced1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.31, y: 0.44}
@@ -186,7 +186,7 @@ MonoBehaviour:
   pushForce: 15
   hasAtackAni: 0
   canHit: 1
---- !u!114 &509857699002177988
+--- !u!114 &5901371027975141888
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 509857699002177991}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b59e48d24b89ccf448b37467de333335, type: 3}
+  m_Script: {fileID: 11500000, guid: cde69d580c6683046b54c35dff2d8f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoint: 125
@@ -219,3 +219,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  stage1: 0
+  stage2: 1
+  stage3: 0
+  bossGold: 250

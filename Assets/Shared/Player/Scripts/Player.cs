@@ -13,15 +13,6 @@ public class Player : Movement
 
     private float hitCooldown = 0.75f;
     private float lastSwing;
-    
-    protected override void Start()
-    {
-        base.Start();
-        if(hasSpeedBoots)
-        {
-            xSpeed = 2f;
-        }
-    }
 
     private void FixedUpdate()
     {

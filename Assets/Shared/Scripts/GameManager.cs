@@ -101,6 +101,10 @@ public class GameManager : MonoBehaviour
 
         playerGold = int.Parse(saveData[3]);
         player.hasSpeedBoots = bool.Parse(saveData[4]);
+        if(player.hasSpeedBoots)
+        {
+            player.xSpeed = 2f;
+        }
         player.armorLevel = int.Parse(saveData[5]);
         player.loadHealth();
         player.gameObject.GetComponent<PlayerJump>().hasDoubleJump = bool.Parse(saveData[6]);
