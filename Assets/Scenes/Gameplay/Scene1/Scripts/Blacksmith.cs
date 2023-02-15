@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Blacksmith : Collidable
 {
-    private int[] swordPrices = {25,45,70,110,200};
-    private int[] armorPrices = {35,50,80,115,190};
+    private int[] swordPrices = {30,55,85,135,300};
+    private int[] armorPrices = {35,50,80,145,250};
 
     public Animator animator;
     public Text swordPriceText;
@@ -63,7 +63,7 @@ public class Blacksmith : Collidable
 
     private void updateMenu()
     {
-        if((swordPrices.Length-1) == GameManager.instance.player.gameObject.transform.GetChild(0).GetComponent<PlayerAttack>().swordLevel)
+        if((swordPrices.Length) == GameManager.instance.player.gameObject.transform.GetChild(0).GetComponent<PlayerAttack>().swordLevel)
         {
             swordPriceText.text = "---";
         } else {

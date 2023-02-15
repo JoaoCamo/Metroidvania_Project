@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAttack : Collidable
 {
-    public int[] SwordDamage = {1,3,5,7,10};
+    public int[] SwordDamage = {1,3,5,7,10,15};
     public int swordLevel = 0;
     private float SwordKnockback = 10f;
 
