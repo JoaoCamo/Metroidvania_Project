@@ -66,7 +66,7 @@ public class Player : Movement
     public void upgradeArmor()
     {
         armorLevel++;
-        maxHitpoint += 10;
+        maxHitpoint += 15;
         hitpoint = maxHitpoint;
     }
 

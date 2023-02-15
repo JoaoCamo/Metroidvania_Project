@@ -170,8 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e9aa9e4763a82f4582688f41692e4f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitpoint: 20
-  maxHitpoint: 20
+  hitpoint: 25
+  maxHitpoint: 25
   pushRecoverySpeed: 0.2
   hasMovingAni: 1
   xSpeed: 1.5
