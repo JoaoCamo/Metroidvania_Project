@@ -204,7 +204,7 @@ MonoBehaviour:
   hasMovingAni: 1
   xSpeed: 1
   trigger: 1
-  chase: 1.5
+  chase: 2.25
   filter:
     useTriggers: 0
     useLayerMask: 0
