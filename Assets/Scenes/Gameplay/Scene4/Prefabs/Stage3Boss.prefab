@@ -182,7 +182,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  damage: 20
+  damage: 15
   pushForce: 15
   hasAtackAni: 1
   canHit: 1

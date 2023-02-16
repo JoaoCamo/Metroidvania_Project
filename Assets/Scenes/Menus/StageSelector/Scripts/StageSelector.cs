@@ -81,8 +81,8 @@ public class StageSelector : MonoBehaviour
         {
             GameManager.instance.menuOpen = false;
             SceneManager.LoadScene("Stage4");
-            //GameManager.instance.mp.audioSource.clip = GameManager.instance.mp.music[5];
-            //GameManager.instance.mp.audioSource.Play();
+            GameManager.instance.mp.audioSource.clip = GameManager.instance.mp.music[5];
+            GameManager.instance.mp.audioSource.Play();
         }
     }
 }
