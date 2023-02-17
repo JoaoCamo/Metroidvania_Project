@@ -7,7 +7,7 @@ public class FinalBossTrigger : MonoBehaviour
     private bool isPlaying = false;
     public Animator finalBossHealthBarAni;
 
-    private void OntriggerEnter2D(Collider2D coll)
+    private void OnTriggerEnter2D(Collider2D coll)
     {
         if(coll.name == "Player" && !isPlaying)
         {

@@ -221,3 +221,5 @@ MonoBehaviour:
     maxNormalAngle: 0
   dialogAnimator: {fileID: 0}
   ending: {fileID: 0}
+  finalBossHealthBar: {fileID: 0}
+  finalBossHealthBarAni: {fileID: 0}
