@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
             Destroy(mc.gameObject);
             Destroy(HUD);
             Destroy(mp.gameObject);
+            return;
         }
         instance = this;
 
@@ -126,6 +127,7 @@ public class GameManager : MonoBehaviour
     public void newGame()
     {
         PlayerPrefs.DeleteKey("SaveGame");
+        mc.initialDialog = false;
         SceneManager.LoadScene("Scene1");
         mp.audioSource.clip = mp.music[1];
         mp.audioSource.Play();
@@ -142,6 +144,7 @@ public class GameManager : MonoBehaviour
 
     public void returnToMainMenu()
     {
+        menuOpen = true;
         SceneManager.LoadScene("MainMenu");
         mp.audioSource.clip = mp.music[0];
         mp.audioSource.Play();
