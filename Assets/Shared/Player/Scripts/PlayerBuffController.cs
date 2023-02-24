@@ -96,7 +96,6 @@ public class PlayerBuffController : MonoBehaviour
 
     public void strengthPotionCountdown()
     {
-
         if(currentTime < strengthPotionDuration)
         {
             currentTime += Time.deltaTime;
