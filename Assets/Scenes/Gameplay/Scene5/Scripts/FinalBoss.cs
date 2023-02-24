@@ -12,10 +12,14 @@ public class FinalBoss : Enemy
     public RectTransform finalBossHealthBar;
     public Animator finalBossHealthBarAni;
 
+    public AudioClip stage2AttackAudio;
+    private AudioSource audioSource;
+
     protected override void Start()
     {
         base.Start();
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -75,6 +79,7 @@ public class FinalBoss : Enemy
         canDie = true;
         hitpoint = maxHitpoint;
         HealthBarChange();
+        audioSource.clip = stage2AttackAudio;
         GameManager.instance.mp.audioSource.clip = GameManager.instance.mp.music[7];
         GameManager.instance.mp.audioSource.Play();
     }

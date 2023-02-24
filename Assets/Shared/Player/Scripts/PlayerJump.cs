@@ -29,11 +29,13 @@ public class PlayerJump : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpVelocity);
             animator.SetTrigger("jump");
+            gameObject.GetComponent<Player>().audioSource.PlayOneShot(gameObject.GetComponent<Player>().playerSounds[1]);
         } else if(Input.GetKeyDown(KeyCode.Z) && hasDoubleJump && !doubleJumped && !isGrounded && !gameObject.GetComponent<Player>().attacking)
         {
             doubleJumped = true;
             rb.velocity = new Vector2(rb.velocity.x, jumpVelocity);
             animator.SetTrigger("jump");
+            gameObject.GetComponent<Player>().audioSource.PlayOneShot(gameObject.GetComponent<Player>().playerSounds[1]);
         }
     }
 

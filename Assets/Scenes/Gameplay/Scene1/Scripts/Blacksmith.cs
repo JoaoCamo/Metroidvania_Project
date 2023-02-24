@@ -12,6 +12,14 @@ public class Blacksmith : Collidable
     public Text swordPriceText;
     public Text armorPriceText;
 
+    private AudioSource audioSource;
+
+    protected override void Start()
+    {
+        base.Start();
+        audioSource = GetComponent<AudioSource>();
+    }
+
     protected override void OnCollide(Collider2D coll)
     {
         if(Input.GetKeyDown(KeyCode.E) && !GameManager.instance.menuOpen && coll.name == "Player")
@@ -39,6 +47,7 @@ public class Blacksmith : Collidable
             GameManager.instance.playerGold -= swordPrices[GameManager.instance.player.gameObject.transform.GetChild(0).GetComponent<PlayerAttack>().swordLevel];
             GameManager.instance.player.gameObject.transform.GetChild(0).GetComponent<PlayerAttack>().upgradeSword();
             updateMenu();
+            audioSource.Play();
         } else {
             return;
         }
@@ -56,6 +65,7 @@ public class Blacksmith : Collidable
             GameManager.instance.player.upgradeArmor();
             GameManager.instance.player.HealthBarChange();
             updateMenu();
+            audioSource.Play();
         } else {
             return;
         }

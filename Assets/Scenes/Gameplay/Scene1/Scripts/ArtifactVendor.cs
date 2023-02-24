@@ -9,6 +9,14 @@ public class ArtifactVendor : Collidable
     public Text doubleJumpPriceText;
     public Text speedBootsPriceText;
 
+    private AudioSource audioSource;
+
+    protected override void Start()
+    {
+        base.Start();
+        audioSource = GetComponent<AudioSource>();
+    }
+
     protected override void OnCollide(Collider2D coll)
     {
         if(Input.GetKeyDown(KeyCode.E) && !GameManager.instance.menuOpen && coll.name == "Player")
@@ -36,6 +44,7 @@ public class ArtifactVendor : Collidable
             GameManager.instance.playerGold -= 250;
             GameManager.instance.player.gameObject.GetComponent<PlayerJump>().hasDoubleJump = true;
             updateMenu();
+            audioSource.Play();
         } else {
             return;
         }
@@ -53,6 +62,7 @@ public class ArtifactVendor : Collidable
             GameManager.instance.player.hasSpeedBoots = true;
             GameManager.instance.player.xSpeed = 2f;
             updateMenu();
+            audioSource.Play();
         } else {
             return;
         }

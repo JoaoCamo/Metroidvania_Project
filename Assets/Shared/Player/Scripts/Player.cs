@@ -11,6 +11,9 @@ public class Player : Movement
     public bool hasSpeedBoots = false;
     public int armorLevel = 0;
 
+    public AudioClip[] playerSounds;
+    public AudioSource audioSource;
+
     private float hitCooldown = 0.75f;
     private float lastSwing;
 
@@ -23,7 +26,7 @@ public class Player : Movement
            UpdateMotor(new Vector3(xInput,0,0));
         }
     }
-
+    
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.X) && !tookDamage)
@@ -72,7 +75,7 @@ public class Player : Movement
 
     public void loadHealth()
     {
-        maxHitpoint += (armorLevel*10);
+        maxHitpoint += (armorLevel*15);
         hitpoint = maxHitpoint;
     }
 

@@ -33,8 +33,10 @@ public class PlayerBuffController : MonoBehaviour
                 if(carriedPotions[selectedPotion-1] == 0)
                 {
                     healthPotion();
+                    gameObject.GetComponent<Player>().audioSource.PlayOneShot(gameObject.GetComponent<Player>().playerSounds[2]);
                 } else {
                     strengthPotion();
+                    gameObject.GetComponent<Player>().audioSource.PlayOneShot(gameObject.GetComponent<Player>().playerSounds[3]);
                 }
             }
         }

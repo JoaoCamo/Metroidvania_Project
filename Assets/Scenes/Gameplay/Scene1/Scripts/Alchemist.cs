@@ -10,6 +10,14 @@ public class Alchemist : Collidable
     public Text healthPotionPriceText;
     public Text strengthPotionPriceText;
 
+    private AudioSource audioSource;
+
+    protected override void Start()
+    {
+        base.Start();
+        audioSource = GetComponent<AudioSource>();
+    }
+
     protected override void OnCollide(Collider2D coll)
     {
         if(Input.GetKeyDown(KeyCode.E) && !GameManager.instance.menuOpen && coll.name == "Player")
@@ -37,6 +45,7 @@ public class Alchemist : Collidable
             GameManager.instance.playerGold -= 20;
             GameManager.instance.player.gameObject.GetComponent<PlayerBuffController>().carriedPotions.Add(0);
             updateMenu();
+            audioSource.Play();
             GameManager.instance.player.gameObject.GetComponent<PlayerBuffController>().UpdatePotionAni();
         } else {
             return;
@@ -54,6 +63,7 @@ public class Alchemist : Collidable
             GameManager.instance.playerGold -= 50;
             GameManager.instance.player.gameObject.GetComponent<PlayerBuffController>().carriedPotions.Add(1);
             updateMenu();
+            audioSource.Play();
             GameManager.instance.player.gameObject.GetComponent<PlayerBuffController>().UpdatePotionAni();
         } else {
             return;

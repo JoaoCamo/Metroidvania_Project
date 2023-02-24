@@ -22,6 +22,7 @@ public class PlayerAttack : Collidable
                 origin = transform.position,
                 pushForce = SwordKnockback
             };
+            gameObject.transform.parent.GetComponent<Player>().audioSource.PlayOneShot(gameObject.transform.parent.GetComponent<Player>().playerSounds[0]);
             coll.SendMessage("ReceiveDamage", dmg);
         }
     }
