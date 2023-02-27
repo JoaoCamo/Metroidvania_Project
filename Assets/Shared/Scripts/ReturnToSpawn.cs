@@ -14,6 +14,7 @@ public class ReturnToSpawn : Collidable
             if(GameManager.instance.player.hitpoint - 3 <= 0)
             {
                 GameManager.instance.player.hitpoint = 0;
+                GameManager.instance.menuOpen = true;
                 GameManager.instance.mc.deathScreen.SetTrigger("show");
             } else {
                 GameManager.instance.player.hitpoint -= 3;
