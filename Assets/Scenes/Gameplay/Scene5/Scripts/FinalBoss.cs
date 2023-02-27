@@ -53,6 +53,7 @@ public class FinalBoss : Enemy
                 hitpoint = maxHitpoint;
                 showDialog();
             }
+            animator.SetTrigger("hit");
         }
         HealthBarChange();
     }

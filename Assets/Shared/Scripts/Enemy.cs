@@ -69,6 +69,17 @@ public class Enemy : Movement
         }
     }
 
+    protected override void ReceiveDamage(Damage dmg)
+    {
+        if(!alive)
+        {
+            return;
+        }
+        
+        animator.SetTrigger("hit");
+        base.ReceiveDamage(dmg);
+    }
+
     protected override void death()
     {
         animator.SetTrigger("dead");
