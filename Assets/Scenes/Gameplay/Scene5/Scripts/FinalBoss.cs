@@ -46,6 +46,8 @@ public class FinalBoss : Enemy
             hitpoint -= dmg.damageAmount;
             pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
 
+            GameManager.instance.showText(dmg.damageAmount.ToString(), 35, Color.red, transform.position, Vector3.up * 75, 0.5f);
+
             if(hitpoint <= 0 && canDie)
             {
                 death();
