@@ -75,7 +75,7 @@ public class Player : Movement
 
     public void loadHealth()
     {
-        maxHitpoint += (armorLevel*15);
+        maxHitpoint = (armorLevel*15 + 25);
         hitpoint = maxHitpoint;
     }
 

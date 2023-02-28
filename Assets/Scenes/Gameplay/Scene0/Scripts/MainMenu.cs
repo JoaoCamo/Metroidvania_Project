@@ -6,16 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public Button load;
+    public Button load1;
+    public Button load2;
 
     private void Awake()
     {
-        if(PlayerPrefs.HasKey("SaveGame"))
-        {
-            load.interactable = true;
-        } else {
-            load.interactable = false;
-        }
+        updateMenu();
     }
 
     public void newGame()
@@ -23,8 +19,31 @@ public class MainMenu : MonoBehaviour
         GameManager.instance.newGame();
     }
 
-    public void LoadGame()
+    public void LoadGameSave(string saveName)
     {
-        GameManager.instance.LoadGame();
+        GameManager.instance.LoadGame(saveName);
+    }
+
+    public void deleteSave(string saveName)
+    {
+        PlayerPrefs.DeleteKey(saveName);
+        updateMenu();
+    }
+
+    private void updateMenu()
+    {
+        if(PlayerPrefs.HasKey("SaveGame1"))
+        {
+            load1.interactable = true;
+        } else {
+            load1.interactable = false;
+        }
+
+        if(PlayerPrefs.HasKey("SaveGame2"))
+        {
+            load2.interactable = true;
+        } else {
+            load2.interactable = false;
+        }
     }
 }

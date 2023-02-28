@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
         player.transform.position = GameObject.Find("SpawnPoint").transform.position;
     }
 
-    public void saveGame()
+    public void saveGame(string saveName)
     {
         string save = "";
         int listHelper = player.gameObject.GetComponent<PlayerBuffController>().carriedPotions.Count;
@@ -82,19 +82,17 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        PlayerPrefs.SetString("SaveGame",save);
+        PlayerPrefs.SetString(saveName,save);
     }
 
-    public void loadSaveGame(Scene save, LoadSceneMode mode)
+    public void loadSaveGame(string saveName)
     {
-        SceneManager.sceneLoaded -= loadSaveGame;
-
-        if(!PlayerPrefs.HasKey("SaveGame"))
+        if(!PlayerPrefs.HasKey(saveName))
         {
             return;
         }
 
-        string[] saveData = PlayerPrefs.GetString("SaveGame").Split("|");
+        string[] saveData = PlayerPrefs.GetString(saveName).Split("|");
 
         stage1 = bool.Parse(saveData[0]);
         stage2 = bool.Parse(saveData[1]);
@@ -105,6 +103,8 @@ public class GameManager : MonoBehaviour
         if(player.hasSpeedBoots)
         {
             player.xSpeed = 2f;
+        }  else {
+            player.xSpeed = 1.5f;
         }
         player.armorLevel = int.Parse(saveData[5]);
         player.loadHealth();
@@ -113,6 +113,7 @@ public class GameManager : MonoBehaviour
 
         mc.initialDialog = bool.Parse(saveData[8]);
 
+        player.gameObject.GetComponent<PlayerBuffController>().carriedPotions.Clear();
         int listHelper = int.Parse(saveData[9]);
         if(listHelper > 0)
         {
@@ -124,18 +125,34 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void newGameReset()
+    {
+        mc.initialDialog = false;
+        stage1 = false;
+        stage2 = false;
+        stage3 = false;
+        playerGold = 0;
+        player.hasSpeedBoots = false;
+        player.xSpeed = 1.5f;
+        player.armorLevel = 0;
+        player.loadHealth();
+        player.gameObject.GetComponent<PlayerJump>().hasDoubleJump = false;
+        player.gameObject.transform.GetChild(0).GetComponent<PlayerAttack>().swordLevel = 0;
+        player.gameObject.GetComponent<PlayerBuffController>().carriedPotions.Clear();
+        player.gameObject.GetComponent<PlayerBuffController>().UpdatePotionAni();
+    }
+
     public void newGame()
     {
-        PlayerPrefs.DeleteKey("SaveGame");
-        mc.initialDialog = false;
+        newGameReset();
         SceneManager.LoadScene("Scene1");
         mp.audioSource.clip = mp.music[1];
         mp.audioSource.Play();
     }
 
-    public void LoadGame()
+    public void LoadGame(string saveName)
     {
-        SceneManager.sceneLoaded += loadSaveGame;
+        loadSaveGame(saveName);
         SceneManager.LoadScene("Scene1");
         menuOpen = false;
         mp.audioSource.clip = mp.music[1];
