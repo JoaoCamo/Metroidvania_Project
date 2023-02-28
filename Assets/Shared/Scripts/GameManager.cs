@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public Player player;
     public GameObject HUD;
     public MusicPlayer mp;
+    public FloatingTextManager ftm;
 
     public int playerGold;
     public bool menuOpen = true;
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
             Destroy(mc.gameObject);
             Destroy(HUD);
             Destroy(mp.gameObject);
+            Destroy(ftm.gameObject);
             return;
         }
         instance = this;
@@ -36,6 +38,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(mc.gameObject);
         DontDestroyOnLoad(HUD);
         DontDestroyOnLoad(mp.gameObject);
+        DontDestroyOnLoad(ftm.gameObject);
 
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
@@ -44,8 +47,8 @@ public class GameManager : MonoBehaviour
     {
         mc.deathScreen.SetTrigger("hide");
         menuOpen = false;
-        player.respawn();
         SceneManager.LoadScene("Scene1");
+        player.respawn();
         mp.audioSource.clip = mp.music[1];
         mp.audioSource.Play();
     }
@@ -53,6 +56,11 @@ public class GameManager : MonoBehaviour
     public void OnSceneLoaded(Scene save, LoadSceneMode mode)
     {
         player.transform.position = GameObject.Find("SpawnPoint").transform.position;
+    }
+
+    public void showText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
+    {
+        ftm.show(msg, fontSize, color, position, motion, duration);
     }
 
     public void saveGame(string saveName)

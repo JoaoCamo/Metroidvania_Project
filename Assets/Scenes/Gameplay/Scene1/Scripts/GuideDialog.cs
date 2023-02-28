@@ -27,20 +27,25 @@ public class GuideDialog : Collidable
 
     protected override void OnCollide(Collider2D coll)
     {
-        if(Input.GetKeyDown(KeyCode.E) && !GameManager.instance.menuOpen && coll.name == "Player")
+        if(coll.name == "Player")
         {
-            GameManager.instance.menuOpen = true;
-            if(GameManager.instance.stage3)
+            GameManager.instance.showText("E", 40, Color.white, transform.position + new Vector3(0, 0.40f), Vector3.zero, 0f);
+
+            if(Input.GetKeyDown(KeyCode.E) && !GameManager.instance.menuOpen && coll.name == "Player")
             {
-                stage4Phrase();
-            } else if(GameManager.instance.stage2) {
-                stage3Phrase();
-            } else if(GameManager.instance.stage1) {
-                stage2Phrase();
-            } else{
-                stage1Phrase();
+                GameManager.instance.menuOpen = true;
+                if(GameManager.instance.stage3)
+                {
+                    stage4Phrase();
+                } else if(GameManager.instance.stage2) {
+                    stage3Phrase();
+                } else if(GameManager.instance.stage1) {
+                    stage2Phrase();
+                } else{
+                    stage1Phrase();
+                }
+                animator.SetTrigger("show");
             }
-            animator.SetTrigger("show");
         }
     }
 

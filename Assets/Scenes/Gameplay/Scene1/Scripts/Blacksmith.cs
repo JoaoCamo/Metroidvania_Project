@@ -22,12 +22,17 @@ public class Blacksmith : Collidable
 
     protected override void OnCollide(Collider2D coll)
     {
-        if(Input.GetKeyDown(KeyCode.E) && !GameManager.instance.menuOpen && coll.name == "Player")
+        if(coll.name == "Player")
         {
-            updateMenu();
-            animator.SetTrigger("show");
-            GameManager.instance.menuOpen = true;
-        }    
+            GameManager.instance.showText("E", 40, Color.white, transform.position + new Vector3(0, 0.40f), Vector3.zero, 0f);
+
+            if(Input.GetKeyDown(KeyCode.E) && !GameManager.instance.menuOpen)
+            {
+                updateMenu();
+                animator.SetTrigger("show");
+                GameManager.instance.menuOpen = true;
+            } 
+        }   
     }
 
     public void exitMenu()

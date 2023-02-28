@@ -57,7 +57,12 @@ public class Player : Movement
         animator.SetTrigger("dead");
         GameManager.instance.menuOpen = true;
         GameManager.instance.mc.deathScreen.SetTrigger("show");
-        GameManager.instance.playerGold -= 20;
+        if(GameManager.instance.playerGold >= 20)
+        {
+            GameManager.instance.playerGold -= 20;
+        } else {
+            GameManager.instance.playerGold = 0;
+        }
     }
 
     public void HealthBarChange()
@@ -85,5 +90,6 @@ public class Player : Movement
         hitpoint = maxHitpoint;
         HealthBarChange();
         alive = true;
+        lastImmune = Time.time;
     }
 }

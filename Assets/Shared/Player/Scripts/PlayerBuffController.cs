@@ -33,9 +33,11 @@ public class PlayerBuffController : MonoBehaviour
                 if(carriedPotions[selectedPotion-1] == 0)
                 {
                     healthPotion();
+                    GameManager.instance.showText("+ 20", 50, Color.green, transform.position, Vector3.up * 75, 1.5f);
                     gameObject.GetComponent<Player>().audioSource.PlayOneShot(gameObject.GetComponent<Player>().playerSounds[2]);
                 } else {
                     strengthPotion();
+                    GameManager.instance.showText("Dano 2x", 50, Color.magenta, transform.position, Vector3.up * 75, 1.5f);
                     gameObject.GetComponent<Player>().audioSource.PlayOneShot(gameObject.GetComponent<Player>().playerSounds[3]);
                 }
             }

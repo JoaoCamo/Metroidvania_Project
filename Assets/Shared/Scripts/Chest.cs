@@ -23,6 +23,7 @@ public class Chest : Collidable
             collected = true;
             chestGold = Random.Range(goldBottom,goldCeiling);
             GameManager.instance.playerGold += chestGold;
+            GameManager.instance.showText("+ " + chestGold.ToString(), 40, Color.yellow, transform.position, Vector3.up * 75, 1f);
             animator.SetTrigger("open");
         }
     }
