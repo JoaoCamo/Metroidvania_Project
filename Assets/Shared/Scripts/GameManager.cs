@@ -129,8 +129,8 @@ public class GameManager : MonoBehaviour
             {
                 player.gameObject.GetComponent<PlayerBuffController>().carriedPotions.Add(int.Parse(saveData[9+(i+1)]));
             }
-            player.gameObject.GetComponent<PlayerBuffController>().UpdatePotionAni();
         }
+        player.gameObject.GetComponent<PlayerBuffController>().UpdatePotionAni();
     }
 
     public void newGameReset()
