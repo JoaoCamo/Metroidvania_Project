@@ -82,6 +82,7 @@ public class Player : Movement
     {
         maxHitpoint = (armorLevel*15 + 25);
         hitpoint = maxHitpoint;
+        HealthBarChange();
     }
 
     public void respawn()
