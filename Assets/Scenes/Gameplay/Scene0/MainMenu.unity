@@ -2204,6 +2204,11 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5059945702158269549, guid: 38a9713bd5cfe2d499b4b98ce248227a, type: 3}
   m_PrefabInstance: {fileID: 2016727080}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1013350852 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2202497269795083547, guid: 38a9713bd5cfe2d499b4b98ce248227a, type: 3}
+  m_PrefabInstance: {fileID: 2016727080}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1066180977
 GameObject:
   m_ObjectHideFlags: 0
@@ -2368,9 +2373,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1747398732}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: exit
+      - m_Target: {fileID: 1365898565}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: exitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3212,6 +3217,18 @@ MonoBehaviour:
           m_StringArgument: SaveGame1
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1013350852}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: show
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1556427736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4039,6 +4056,18 @@ MonoBehaviour:
           m_StringArgument: SaveGame2
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1013350852}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: show
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1809407702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4171,6 +4200,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1013350852}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: show
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1832766855

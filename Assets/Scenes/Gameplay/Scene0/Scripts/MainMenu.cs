@@ -46,4 +46,9 @@ public class MainMenu : MonoBehaviour
             load2.interactable = false;
         }
     }
+
+    public void exitGame()
+    {
+        GameManager.instance.exit();
+    }
 }
