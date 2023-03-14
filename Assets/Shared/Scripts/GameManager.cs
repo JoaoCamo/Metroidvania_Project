@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public MusicPlayer mp;
     public FloatingTextManager ftm;
 
+    public Transform currentCheckpoint;
+
     public int playerGold;
     public bool menuOpen = true;
     public bool stage1 = false;
@@ -55,7 +57,8 @@ public class GameManager : MonoBehaviour
 
     public void OnSceneLoaded(Scene save, LoadSceneMode mode)
     {
-        player.transform.position = GameObject.Find("SpawnPoint").transform.position;
+        player.transform.position = GameObject.Find("Checkpoint (0)").transform.position;
+        currentCheckpoint = GameObject.Find("Checkpoint (0)").transform;
     }
 
     public void showText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
