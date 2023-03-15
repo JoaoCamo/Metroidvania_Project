@@ -14,8 +14,7 @@ public class Player : Movement
     public AudioClip[] playerSounds;
     public AudioSource audioSource;
 
-    private float hitCooldown = 0.75f;
-    private float lastSwing;
+    public int combo;
 
     private void FixedUpdate()
     {
@@ -31,11 +30,7 @@ public class Player : Movement
     {
         if(Input.GetKeyDown(KeyCode.X) && !tookDamage)
         {
-            if(Time.time - lastSwing > hitCooldown)
-            {
-                lastSwing = Time.time;
-                animator.SetTrigger("attack");
-            }
+            animator.SetTrigger(""+combo);
         }
     }
 
@@ -92,5 +87,18 @@ public class Player : Movement
         HealthBarChange();
         alive = true;
         lastImmune = Time.time;
+    }
+
+    public void startCombo()
+    {
+        if(combo < 3)
+        {
+            combo++;
+        }
+    }
+
+    public void finishCombo()
+    {
+        combo = 0;
     }
 }
