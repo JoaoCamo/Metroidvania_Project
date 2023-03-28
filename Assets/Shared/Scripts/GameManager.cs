@@ -21,6 +21,13 @@ public class GameManager : MonoBehaviour
     public bool stage2 = false;
     public bool stage3 = false;
 
+    public KeyCode attack;
+    public KeyCode jump;
+    public KeyCode usePotion;
+    public KeyCode changePotion;
+    public KeyCode inventory;
+    public KeyCode interact;
+
     private void Start()
     {
         if(GameManager.instance != null)
@@ -155,6 +162,7 @@ public class GameManager : MonoBehaviour
 
     public void newGame()
     {
+        loadKeys();
         newGameReset();
         SceneManager.LoadScene("Scene1");
         mp.audioSource.clip = mp.music[1];
@@ -163,6 +171,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadGame(string saveName)
     {
+        loadKeys();
         loadSaveGame(saveName);
         SceneManager.LoadScene("Scene1");
         menuOpen = false;
@@ -187,6 +196,18 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Scene1");
         mp.audioSource.clip = mp.music[1];
         mp.audioSource.Play();
+    }
+
+    public void loadKeys()
+    {
+        string[] controls = PlayerPrefs.GetString("Controls").Split("|");
+
+        attack = (KeyCode) System.Enum.Parse(typeof(KeyCode), controls[0]);
+        jump = (KeyCode) System.Enum.Parse(typeof(KeyCode), controls[1]);
+        inventory = (KeyCode) System.Enum.Parse(typeof(KeyCode), controls[2]);
+        interact = (KeyCode) System.Enum.Parse(typeof(KeyCode), controls[3]);
+        usePotion = (KeyCode) System.Enum.Parse(typeof(KeyCode), controls[4]);
+        changePotion = (KeyCode) System.Enum.Parse(typeof(KeyCode), controls[5]);
     }
 
     public void exit()

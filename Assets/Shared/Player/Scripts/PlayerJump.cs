@@ -25,12 +25,12 @@ public class PlayerJump : MonoBehaviour
     //Pulo do player
     private void jump()
     {
-        if(Input.GetKeyDown(KeyCode.Z) && isGrounded && !gameObject.GetComponent<Player>().attacking && !GameManager.instance.menuOpen)
+        if(Input.GetKeyDown(GameManager.instance.jump) && isGrounded && !gameObject.GetComponent<Player>().attacking && !GameManager.instance.menuOpen)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpVelocity);
             animator.SetTrigger("jump");
             gameObject.GetComponent<Player>().audioSource.PlayOneShot(gameObject.GetComponent<Player>().playerSounds[1]);
-        } else if(Input.GetKeyDown(KeyCode.Z) && hasDoubleJump && !doubleJumped && !isGrounded && !gameObject.GetComponent<Player>().attacking)
+        } else if(Input.GetKeyDown(GameManager.instance.jump) && hasDoubleJump && !doubleJumped && !isGrounded && !gameObject.GetComponent<Player>().attacking)
         {
             doubleJumped = true;
             rb.velocity = new Vector2(rb.velocity.x, jumpVelocity);

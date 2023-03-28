@@ -87,7 +87,7 @@ public class Enemy : Movement
         gameObject.GetComponent<EnemyHitBox>().canHit = false;
         enemyGoldDrop = Random.Range(2,8);
         GameManager.instance.playerGold += enemyGoldDrop;
-        GameManager.instance.showText("+ " + enemyGoldDrop.ToString(), 40, Color.yellow, transform.position, Vector3.up * 75, 1f);
+        GameManager.instance.showText("+ " + enemyGoldDrop.ToString(), 40, Color.yellow, new Vector3(transform.position.x,transform.position.y + 0.25f, transform.position.z), Vector3.up * 75, 1f);
     }
 
     private void destroy()

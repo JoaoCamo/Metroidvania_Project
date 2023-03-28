@@ -26,7 +26,7 @@ public class PlayerBuffController : MonoBehaviour
 
     private void usePotion()
     {
-        if(Input.GetKeyDown(KeyCode.C))
+        if(Input.GetKeyDown(GameManager.instance.usePotion))
         {
             if(carriedPotions.Count > 0)
             {
@@ -46,7 +46,7 @@ public class PlayerBuffController : MonoBehaviour
 
     private void potionSelector()
     {
-        if(Input.GetKeyDown(KeyCode.V))
+        if(Input.GetKeyDown(GameManager.instance.changePotion))
         {
             if(carriedPotions.Count > 0)
             {

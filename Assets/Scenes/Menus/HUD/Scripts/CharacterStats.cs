@@ -20,7 +20,7 @@ public class CharacterStats : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.I) && !GameManager.instance.menuOpen)
+        if(Input.GetKeyDown(GameManager.instance.inventory) && !GameManager.instance.menuOpen)
         {
             GameManager.instance.menuOpen = true;
             updateMenu();

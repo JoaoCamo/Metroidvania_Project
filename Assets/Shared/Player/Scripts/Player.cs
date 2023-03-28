@@ -28,7 +28,7 @@ public class Player : Movement
     
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.X) && !tookDamage)
+        if(Input.GetKeyDown(GameManager.instance.attack) && !tookDamage)
         {
             animator.SetTrigger(""+combo);
         }

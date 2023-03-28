@@ -29,9 +29,9 @@ public class GuideDialog : Collidable
     {
         if(coll.name == "Player")
         {
-            GameManager.instance.showText("E", 40, Color.white, transform.position + new Vector3(0, 0.40f), Vector3.zero, 0f);
+            GameManager.instance.showText(GameManager.instance.interact.ToString(), 40, Color.white, transform.position + new Vector3(0, 0.40f), Vector3.zero, 0f);
 
-            if(Input.GetKeyDown(KeyCode.E) && !GameManager.instance.menuOpen && coll.name == "Player")
+            if(Input.GetKeyDown(GameManager.instance.interact) && !GameManager.instance.menuOpen && coll.name == "Player")
             {
                 GameManager.instance.menuOpen = true;
                 if(GameManager.instance.stage3)
