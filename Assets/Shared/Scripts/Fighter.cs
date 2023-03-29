@@ -22,7 +22,7 @@ public class Fighter : MonoBehaviour
             pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
 
             GameManager.instance.showText(dmg.damageAmount.ToString(), 35, Color.red, transform.position, Vector3.up * 75, 0.5f);
-            GameManager.instance.showBloodParticle(transform.position, 5f);
+            GameManager.instance.showParticle(transform.position, 0, 5f);
 
             if(hitpoint <= 0)
             {

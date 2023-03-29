@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BloodParticle
+public class Particles
 {
     public bool active;
     public GameObject go;
     public float duration;
     public float lastShown;
-    
+
+    public int type;
+
     public void Show()
     {
         active = true;
@@ -22,7 +24,7 @@ public class BloodParticle
         go.SetActive(active);
     }
     
-    public void UpdateBloodParticles()
+    public void UpdateParticles()
     {
         if(!active)
         {
