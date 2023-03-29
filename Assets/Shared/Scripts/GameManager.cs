@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject HUD;
     public MusicPlayer mp;
     public FloatingTextManager ftm;
+    public BloodParticleManager bpm;
 
     public Transform currentCheckpoint;
 
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour
             Destroy(HUD);
             Destroy(mp.gameObject);
             Destroy(ftm.gameObject);
+            Destroy(bpm.gameObject);
             return;
         }
         instance = this;
@@ -48,12 +50,14 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(HUD);
         DontDestroyOnLoad(mp.gameObject);
         DontDestroyOnLoad(ftm.gameObject);
+        DontDestroyOnLoad(bpm.gameObject);
 
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     public void respawn()
     {
+        bpm.clearBloodParticles();
         mc.deathScreen.SetTrigger("hide");
         menuOpen = false;
         SceneManager.LoadScene("Scene1");
@@ -71,6 +75,11 @@ public class GameManager : MonoBehaviour
     public void showText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
         ftm.show(msg, fontSize, color, position, motion, duration);
+    }
+
+    public void showBloodParticle(Vector3 position, float duration)
+    {
+        bpm.show(position, duration);
     }
 
     public void saveGame(string saveName)

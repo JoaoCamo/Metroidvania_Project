@@ -6463,6 +6463,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630525156}
     m_Modifications:
+    - target: {fileID: -1644843694143009543, guid: 701a576b35071c54db48cb6aeeb3ab26, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 809630847064541705, guid: 701a576b35071c54db48cb6aeeb3ab26, type: 3}
       propertyPath: spawnPoint
       value: 
@@ -6749,6 +6753,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630525156}
     m_Modifications:
+    - target: {fileID: -1644843694143009543, guid: 701a576b35071c54db48cb6aeeb3ab26, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 809630847064541705, guid: 701a576b35071c54db48cb6aeeb3ab26, type: 3}
       propertyPath: spawnPoint
       value: 
@@ -6925,6 +6933,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630525156}
     m_Modifications:
+    - target: {fileID: -1644843694143009543, guid: 701a576b35071c54db48cb6aeeb3ab26, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 809630847064541705, guid: 701a576b35071c54db48cb6aeeb3ab26, type: 3}
       propertyPath: spawnPoint
       value: 
@@ -7039,6 +7051,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630525156}
     m_Modifications:
+    - target: {fileID: -1644843694143009543, guid: 701a576b35071c54db48cb6aeeb3ab26, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 809630847064541705, guid: 701a576b35071c54db48cb6aeeb3ab26, type: 3}
       propertyPath: spawnPoint
       value: 
@@ -7304,6 +7320,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630525156}
     m_Modifications:
+    - target: {fileID: -1644843694143009543, guid: 701a576b35071c54db48cb6aeeb3ab26, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 809630847064541705, guid: 701a576b35071c54db48cb6aeeb3ab26, type: 3}
       propertyPath: spawnPoint
       value: 
@@ -9538,6 +9558,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630525156}
     m_Modifications:
+    - target: {fileID: -1644843694143009543, guid: 701a576b35071c54db48cb6aeeb3ab26, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 809630847064541705, guid: 701a576b35071c54db48cb6aeeb3ab26, type: 3}
       propertyPath: spawnPoint
       value: 
@@ -63868,6 +63892,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630525156}
     m_Modifications:
+    - target: {fileID: -1644843694143009543, guid: 701a576b35071c54db48cb6aeeb3ab26, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 809630847064541705, guid: 701a576b35071c54db48cb6aeeb3ab26, type: 3}
       propertyPath: spawnPoint
       value: 
@@ -64053,6 +64081,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630525156}
     m_Modifications:
+    - target: {fileID: -1644843694143009543, guid: 701a576b35071c54db48cb6aeeb3ab26, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 809630847064541705, guid: 701a576b35071c54db48cb6aeeb3ab26, type: 3}
       propertyPath: spawnPoint
       value: 
@@ -64167,6 +64199,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630525156}
     m_Modifications:
+    - target: {fileID: -1644843694143009543, guid: 701a576b35071c54db48cb6aeeb3ab26, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 809630847064541705, guid: 701a576b35071c54db48cb6aeeb3ab26, type: 3}
       propertyPath: spawnPoint
       value: 
@@ -70769,6 +70805,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 630525156}
     m_Modifications:
+    - target: {fileID: -1644843694143009543, guid: 701a576b35071c54db48cb6aeeb3ab26, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 809630847064541705, guid: 701a576b35071c54db48cb6aeeb3ab26, type: 3}
       propertyPath: spawnPoint
       value: 
