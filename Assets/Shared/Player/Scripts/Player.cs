@@ -11,6 +11,8 @@ public class Player : Movement
     public bool hasSpeedBoots = false;
     public int armorLevel = 0;
 
+    public float xInput;
+
     public AudioClip[] playerSounds;
     public AudioSource audioSource;
 
@@ -18,29 +20,29 @@ public class Player : Movement
 
     private void FixedUpdate()
     {
-        float xInput = Input.GetAxisRaw("Horizontal");
+        xInput = Input.GetAxisRaw("Horizontal");
 
-        if(alive && !attacking && !GameManager.instance.menuOpen)
+        if (alive && !attacking && !GameManager.instance.menuOpen)
         {
-           UpdateMotor(new Vector3(xInput,0,0));
+            UpdateMotor(new Vector3(xInput, 0, 0));
         }
     }
-    
+
     private void Update()
     {
-        if(Input.GetKeyDown(GameManager.instance.attack) && !tookDamage)
+        if (Input.GetKeyDown(GameManager.instance.attack) && !tookDamage)
         {
-            animator.SetTrigger(""+combo);
+            animator.SetTrigger("" + combo);
         }
     }
 
     protected override void ReceiveDamage(Damage dmg)
     {
-        if(!alive)
+        if (!alive)
         {
             return;
         }
-        
+
         animator.SetTrigger("hit");
         base.ReceiveDamage(dmg);
         HealthBarChange();
@@ -52,17 +54,19 @@ public class Player : Movement
         animator.SetTrigger("dead");
         GameManager.instance.menuOpen = true;
         GameManager.instance.mc.deathScreen.SetTrigger("show");
-        if(GameManager.instance.playerGold >= 20)
+        if (GameManager.instance.playerGold >= 20)
         {
             GameManager.instance.playerGold -= 20;
-        } else {
+        }
+        else
+        {
             GameManager.instance.playerGold = 0;
         }
     }
 
     public void HealthBarChange()
     {
-        float ratio = (float)hitpoint / (float)maxHitpoint;
+        float ratio = (float) hitpoint / (float) maxHitpoint;
         GameManager.instance.mc.healthBar.localScale = new Vector3(ratio, 1, 1);
     }
 
@@ -75,7 +79,7 @@ public class Player : Movement
 
     public void loadHealth()
     {
-        maxHitpoint = (armorLevel*15 + 25);
+        maxHitpoint = (armorLevel * 15 + 25);
         hitpoint = maxHitpoint;
         HealthBarChange();
     }
@@ -91,7 +95,7 @@ public class Player : Movement
 
     public void startCombo()
     {
-        if(combo < 3)
+        if (combo < 3)
         {
             combo++;
         }

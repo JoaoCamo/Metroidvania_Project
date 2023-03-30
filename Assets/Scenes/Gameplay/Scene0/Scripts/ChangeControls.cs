@@ -18,6 +18,7 @@ public class ChangeControls : MonoBehaviour
             controls += "E|";
             controls += "C|";
             controls += "V|";
+            controls += "Q|";
 
             PlayerPrefs.SetString("Controls", controls);
         }
@@ -43,6 +44,7 @@ public class ChangeControls : MonoBehaviour
         controls += inputFields[3].text.ToUpper() + "|";
         controls += inputFields[4].text.ToUpper() + "|";
         controls += inputFields[5].text.ToUpper() + "|";
+        controls += inputFields[6].text.ToUpper() + "|";
 
         PlayerPrefs.SetString("Controls",controls);
         GameManager.instance.loadKeys();

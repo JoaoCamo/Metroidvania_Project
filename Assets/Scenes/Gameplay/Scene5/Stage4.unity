@@ -124485,8 +124485,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd479115fd60dc546ab9ef4b5c4d2868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BoundX: 0.3
-  BoundY: 0.15
 --- !u!1 &1124170228
 GameObject:
   m_ObjectHideFlags: 0
@@ -124497,6 +124495,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1124170229}
   - component: {fileID: 1124170230}
+  - component: {fileID: 1124170231}
   m_Layer: 0
   m_Name: old-dark-castle-interior-background
   m_TagString: Untagged
@@ -124571,6 +124570,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1124170231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124170228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b9ab435d4edde145ab9d42329ac590e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSpeed: 0.3
 --- !u!1 &1127330942
 GameObject:
   m_ObjectHideFlags: 0

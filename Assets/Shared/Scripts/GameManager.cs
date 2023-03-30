@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     public KeyCode changePotion;
     public KeyCode inventory;
     public KeyCode interact;
+    public KeyCode dash;
 
     private void Start()
     {
@@ -54,6 +55,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(pm.gameObject);
 
         SceneManager.sceneLoaded += OnSceneLoaded;
+        
     }
 
     public void respawn()
@@ -216,6 +218,7 @@ public class GameManager : MonoBehaviour
         interact = (KeyCode) System.Enum.Parse(typeof(KeyCode), controls[3]);
         usePotion = (KeyCode) System.Enum.Parse(typeof(KeyCode), controls[4]);
         changePotion = (KeyCode) System.Enum.Parse(typeof(KeyCode), controls[5]);
+        dash = (KeyCode) System.Enum.Parse(typeof(KeyCode), controls[6]);
     }
 
     public void exit()

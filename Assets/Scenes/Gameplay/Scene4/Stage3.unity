@@ -7172,6 +7172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 831458339}
   - component: {fileID: 831458340}
+  - component: {fileID: 831458341}
   m_Layer: 0
   m_Name: mountains
   m_TagString: Untagged
@@ -7246,6 +7247,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &831458341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831458338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b9ab435d4edde145ab9d42329ac590e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSpeed: 0.15
 --- !u!1001 &929163496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9093,8 +9107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd479115fd60dc546ab9ef4b5c4d2868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BoundX: 0.3
-  BoundY: 0.15
 --- !u!1001 &1178386450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9343,6 +9355,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1337382543}
   - component: {fileID: 1337382544}
+  - component: {fileID: 1337382545}
   m_Layer: 0
   m_Name: graveyard
   m_TagString: Untagged
@@ -9417,6 +9430,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1337382545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337382542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b9ab435d4edde145ab9d42329ac590e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xSpeed: 0.35
 --- !u!4 &1369123949 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7653017526820675734, guid: 8e01122c51dd7f448bb681d39395e7c7, type: 3}

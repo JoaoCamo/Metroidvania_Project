@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5306842963618626448}
   - component: {fileID: 1493319655609269542}
   - component: {fileID: 7149946629900273244}
+  - component: {fileID: 4873304107705808980}
   - component: {fileID: 1142386973712659001}
   m_Layer: 0
   m_Name: Player
@@ -216,6 +217,18 @@ MonoBehaviour:
   carriedPotions: 
   selectedPotion: 1
   animator: {fileID: 0}
+--- !u!114 &4873304107705808980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5306842963618626478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1a661cae059744585c99bb811c4516, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &1142386973712659001
 AudioSource:
   m_ObjectHideFlags: 0
