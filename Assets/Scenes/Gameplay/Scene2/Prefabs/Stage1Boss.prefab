@@ -182,6 +182,7 @@ MonoBehaviour:
   hitpoint: 50
   maxHitpoint: 50
   pushRecoverySpeed: 0.2
+  bloodType: 1
   hasMovingAni: 0
   xSpeed: 1.25
   trigger: 1

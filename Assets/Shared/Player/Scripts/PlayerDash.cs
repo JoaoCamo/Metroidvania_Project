@@ -41,9 +41,9 @@ public class PlayerDash : MonoBehaviour
             canDash = false;
             if (xInput > 0)
             {
-                GameManager.instance.showParticle(new Vector3(transform.position.x,transform.position.y - 0.35f, transform.position.z), 3, 5f);
+                GameManager.instance.showParticle(new Vector3(transform.position.x,transform.position.y - 0.35f, transform.position.z), 5, 5f);
             } else {
-                GameManager.instance.showParticle(new Vector3(transform.position.x,transform.position.y - 0.35f, transform.position.z), 4, 5f);  
+                GameManager.instance.showParticle(new Vector3(transform.position.x,transform.position.y - 0.35f, transform.position.z), 6, 5f);  
             }
         }
     }

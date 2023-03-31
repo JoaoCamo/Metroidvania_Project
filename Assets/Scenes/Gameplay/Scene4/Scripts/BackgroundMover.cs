@@ -5,7 +5,7 @@ using UnityEngine;
 public class BackgroundMover : MonoBehaviour
 {
     private Transform player;
-    private float boundX = 0.3f;
+    private float boundX = 0f;
 
     void Start()
     {

@@ -175,12 +175,15 @@ MonoBehaviour:
   hitpoint: 25
   maxHitpoint: 25
   pushRecoverySpeed: 0.2
+  bloodType: 0
+  immuneTime: 0.75
   hasMovingAni: 1
   xSpeed: 1.5
   attacking: 0
   tookDamage: 0
   hasSpeedBoots: 0
   armorLevel: 0
+  xInput: 0
   playerSounds:
   - {fileID: 8300000, guid: 119ce06a301a0434a86e032830f5bab4, type: 3}
   - {fileID: 8300000, guid: 51cbe31b277b6de49abaa47e5f2ef7ce, type: 3}

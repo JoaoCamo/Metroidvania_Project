@@ -29,7 +29,7 @@ public class ParticlesManager : MonoBehaviour
 
     private Particles getParticle(int type)
     {
-        Particles par = particles.Find(t => !t.active);
+        Particles par = particles.Find(t => !t.active && t.type == type);
 
         if(par == null)
         {
@@ -37,17 +37,17 @@ public class ParticlesManager : MonoBehaviour
             par.go = Instantiate(particlePrefab[type]);
 
             particles.Add(par);
-        } else if (par.type != type) {
-            par = new Particles();
-            par.go = Instantiate(particlePrefab[type]);
-
-            particles.Add(par);
         }
+
         return par;
     }
 
     public void clearParticles()
     {
         particles.Clear();
+        foreach (ParticleSystem par in FindObjectsOfType<ParticleSystem>())
+        {
+            Destroy(par.gameObject);
+        }
     }
 }

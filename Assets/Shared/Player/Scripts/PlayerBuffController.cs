@@ -84,7 +84,7 @@ public class PlayerBuffController : MonoBehaviour
             }
             UpdatePotionAni();
         }
-        GameManager.instance.showParticle(transform.position, 1, 5f);
+        GameManager.instance.showParticle(transform.position, 3, 5f);
     }
 
     public void strengthPotion()
@@ -97,7 +97,7 @@ public class PlayerBuffController : MonoBehaviour
             selectedPotion--;
         }
         UpdatePotionAni();
-        GameManager.instance.showParticle(transform.position, 2, 15f, this.transform);
+        GameManager.instance.showParticle(transform.position, 4, 15f, this.transform);
     }
 
     public void strengthPotionCountdown()

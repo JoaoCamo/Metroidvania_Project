@@ -46,6 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particlePrefab:
   - {fileID: 253267327978708607, guid: 9e04d2dcbc8a9de4e96d94b3f26422d7, type: 3}
+  - {fileID: 3598030606833805850, guid: 901ac79bd4ff5f245857d3a740d956b5, type: 3}
+  - {fileID: 4955908360512028417, guid: 14d06b40610c5fe44bef4f4fed81231e, type: 3}
   - {fileID: 6970460904019016477, guid: df9ca928952641442bd477cd747f6bec, type: 3}
   - {fileID: 6453159955970007223, guid: 555b2bdbce0624f4486874da37faad0f, type: 3}
   - {fileID: 1486871927596719188, guid: d0c850dde6ed56e4fb3f392625963db8, type: 3}
