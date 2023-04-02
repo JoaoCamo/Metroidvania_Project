@@ -11,15 +11,16 @@ public class ChangeControls : MonoBehaviour
         if (!PlayerPrefs.HasKey("Controls"))
         {
             string controls = "";
-        
+
             controls += "X|";
             controls += "Z|";
             controls += "I|";
             controls += "E|";
             controls += "C|";
             controls += "V|";
+            controls += "Q|";
 
-            PlayerPrefs.SetString("Controls",controls);
+            PlayerPrefs.SetString("Controls", controls);
         }
         fillText();
     }
@@ -43,7 +44,9 @@ public class ChangeControls : MonoBehaviour
         controls += inputFields[3].text.ToUpper() + "|";
         controls += inputFields[4].text.ToUpper() + "|";
         controls += inputFields[5].text.ToUpper() + "|";
+        controls += inputFields[6].text.ToUpper() + "|";
 
         PlayerPrefs.SetString("Controls",controls);
+        GameManager.instance.loadKeys();
     }
 }

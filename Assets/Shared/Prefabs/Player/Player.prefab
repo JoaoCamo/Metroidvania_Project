@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5306842963618626448}
   - component: {fileID: 1493319655609269542}
   - component: {fileID: 7149946629900273244}
+  - component: {fileID: 4873304107705808980}
   - component: {fileID: 1142386973712659001}
   m_Layer: 0
   m_Name: Player
@@ -174,18 +175,22 @@ MonoBehaviour:
   hitpoint: 25
   maxHitpoint: 25
   pushRecoverySpeed: 0.2
+  bloodType: 0
+  immuneTime: 0.75
   hasMovingAni: 1
   xSpeed: 1.5
   attacking: 0
   tookDamage: 0
   hasSpeedBoots: 0
   armorLevel: 0
+  xInput: 0
   playerSounds:
   - {fileID: 8300000, guid: 119ce06a301a0434a86e032830f5bab4, type: 3}
   - {fileID: 8300000, guid: 51cbe31b277b6de49abaa47e5f2ef7ce, type: 3}
   - {fileID: 8300000, guid: 982a642dcf800f048aa0219e8e61802e, type: 3}
   - {fileID: 8300000, guid: 851ecdf0d79f5ef4b924e22d1b471bef, type: 3}
   audioSource: {fileID: 1142386973712659001}
+  combo: 0
 --- !u!114 &1493319655609269542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,6 +220,18 @@ MonoBehaviour:
   carriedPotions: 
   selectedPotion: 1
   animator: {fileID: 0}
+--- !u!114 &4873304107705808980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5306842963618626478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1a661cae059744585c99bb811c4516, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &1142386973712659001
 AudioSource:
   m_ObjectHideFlags: 0

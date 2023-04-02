@@ -9,7 +9,7 @@ public class PlayerBuffController : MonoBehaviour
     public int selectedPotion = 1;
 
     public Animator animator;
-    
+
     private bool strengthPotionActivated = false;
     private float strengthPotionDuration = 15f;
     private float currentTime = 0;
@@ -84,6 +84,7 @@ public class PlayerBuffController : MonoBehaviour
             }
             UpdatePotionAni();
         }
+        GameManager.instance.showParticle(transform.position, 3, 5f);
     }
 
     public void strengthPotion()
@@ -96,6 +97,7 @@ public class PlayerBuffController : MonoBehaviour
             selectedPotion--;
         }
         UpdatePotionAni();
+        GameManager.instance.showParticle(transform.position, 4, 15f, this.transform);
     }
 
     public void strengthPotionCountdown()

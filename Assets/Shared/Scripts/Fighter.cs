@@ -7,8 +7,9 @@ public class Fighter : MonoBehaviour
     public int hitpoint = 10;
     public int maxHitpoint = 10;
     public float pushRecoverySpeed = 0.2f;
+    public int bloodType;
 
-    protected float immuneTime = 0.25f;
+    public float immuneTime = 0.25f;
     protected float lastImmune;
 
     protected Vector3 pushDirection;
@@ -22,7 +23,7 @@ public class Fighter : MonoBehaviour
             pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
 
             GameManager.instance.showText(dmg.damageAmount.ToString(), 35, Color.red, transform.position, Vector3.up * 75, 0.5f);
-            GameManager.instance.showBloodParticle(transform.position, 5f);
+            GameManager.instance.showParticle(transform.position, bloodType, 5f);
 
             if(hitpoint <= 0)
             {

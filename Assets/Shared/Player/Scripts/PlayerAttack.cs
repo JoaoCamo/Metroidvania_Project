@@ -6,7 +6,7 @@ public class PlayerAttack : Collidable
 {
     public int[] SwordDamage = {1,3,5,7,10,15};
     public int swordLevel = 0;
-    private float SwordKnockback = 12.5f;
+    private float SwordKnockback = 5f;
 
     protected override void OnCollide(Collider2D coll)
     {

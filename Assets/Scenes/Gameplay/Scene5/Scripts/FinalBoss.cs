@@ -47,6 +47,7 @@ public class FinalBoss : Enemy
             pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
 
             GameManager.instance.showText(dmg.damageAmount.ToString(), 35, Color.red, transform.position, Vector3.up * 75, 0.5f);
+            GameManager.instance.showParticle(transform.position, bloodType, 5f);
 
             if(hitpoint <= 0 && canDie)
             {

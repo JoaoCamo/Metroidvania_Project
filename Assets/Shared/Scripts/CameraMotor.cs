@@ -5,10 +5,8 @@ using UnityEngine;
 public class CameraMotor : MonoBehaviour
 {
     private Transform Player;
-
-    public float BoundX = 0.3f;
-
-    public float BoundY = 0.15f;
+    private float BoundX = 0f;
+    private float BoundY = 0.15f;
 
     private void Start()
     {

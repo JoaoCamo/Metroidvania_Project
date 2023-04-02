@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject HUD;
     public MusicPlayer mp;
     public FloatingTextManager ftm;
-    public BloodParticleManager bpm;
+    public ParticlesManager pm;
 
     public Transform currentCheckpoint;
 
@@ -28,9 +28,11 @@ public class GameManager : MonoBehaviour
     public KeyCode changePotion;
     public KeyCode inventory;
     public KeyCode interact;
+    public KeyCode dash;
 
     private void Start()
     {
+        loadKeys();
         if(GameManager.instance != null)
         {
             Destroy(gameObject);
@@ -39,7 +41,7 @@ public class GameManager : MonoBehaviour
             Destroy(HUD);
             Destroy(mp.gameObject);
             Destroy(ftm.gameObject);
-            Destroy(bpm.gameObject);
+            Destroy(pm.gameObject);
             return;
         }
         instance = this;
@@ -50,18 +52,18 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(HUD);
         DontDestroyOnLoad(mp.gameObject);
         DontDestroyOnLoad(ftm.gameObject);
-        DontDestroyOnLoad(bpm.gameObject);
+        DontDestroyOnLoad(pm.gameObject);
 
         SceneManager.sceneLoaded += OnSceneLoaded;
+        
     }
 
     public void respawn()
     {
-        bpm.clearBloodParticles();
         mc.deathScreen.SetTrigger("hide");
         menuOpen = false;
-        SceneManager.LoadScene("Scene1");
         player.respawn();
+        SceneManager.LoadScene("Scene1");
         mp.audioSource.clip = mp.music[1];
         mp.audioSource.Play();
     }
@@ -70,6 +72,7 @@ public class GameManager : MonoBehaviour
     {
         player.transform.position = GameObject.Find("Checkpoint (0)").transform.position;
         currentCheckpoint = GameObject.Find("Checkpoint (0)").transform;
+        pm.clearParticles();
     }
 
     public void showText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
@@ -77,9 +80,9 @@ public class GameManager : MonoBehaviour
         ftm.show(msg, fontSize, color, position, motion, duration);
     }
 
-    public void showBloodParticle(Vector3 position, float duration)
+    public void showParticle(Vector3 position, int type, float duration, Transform parent = null)
     {
-        bpm.show(position, duration);
+        pm.show(position, type, duration, parent);
     }
 
     public void saveGame(string saveName)
@@ -171,7 +174,6 @@ public class GameManager : MonoBehaviour
 
     public void newGame()
     {
-        loadKeys();
         newGameReset();
         SceneManager.LoadScene("Scene1");
         mp.audioSource.clip = mp.music[1];
@@ -180,7 +182,6 @@ public class GameManager : MonoBehaviour
 
     public void LoadGame(string saveName)
     {
-        loadKeys();
         loadSaveGame(saveName);
         SceneManager.LoadScene("Scene1");
         menuOpen = false;
@@ -217,6 +218,7 @@ public class GameManager : MonoBehaviour
         interact = (KeyCode) System.Enum.Parse(typeof(KeyCode), controls[3]);
         usePotion = (KeyCode) System.Enum.Parse(typeof(KeyCode), controls[4]);
         changePotion = (KeyCode) System.Enum.Parse(typeof(KeyCode), controls[5]);
+        dash = (KeyCode) System.Enum.Parse(typeof(KeyCode), controls[6]);
     }
 
     public void exit()
