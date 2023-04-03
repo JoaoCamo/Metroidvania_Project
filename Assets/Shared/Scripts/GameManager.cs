@@ -175,7 +175,7 @@ public class GameManager : MonoBehaviour
     public void newGame()
     {
         newGameReset();
-        SceneManager.LoadScene("Scene1");
+        loadingScreen("Scene1");
         mp.audioSource.clip = mp.music[1];
         mp.audioSource.Play();
     }
@@ -183,7 +183,7 @@ public class GameManager : MonoBehaviour
     public void LoadGame(string saveName)
     {
         loadSaveGame(saveName);
-        SceneManager.LoadScene("Scene1");
+        loadingScreen("Scene1");
         menuOpen = false;
         mp.audioSource.clip = mp.music[1];
         mp.audioSource.Play();
@@ -192,7 +192,7 @@ public class GameManager : MonoBehaviour
     public void returnToMainMenu()
     {
         menuOpen = true;
-        SceneManager.LoadScene("MainMenu");
+        loadingScreen("MainMenu");
         mp.audioSource.clip = mp.music[0];
         mp.audioSource.Play();
     }
@@ -203,7 +203,7 @@ public class GameManager : MonoBehaviour
         menuOpen = false;
         player.hitpoint = player.maxHitpoint;
         player.HealthBarChange();
-        SceneManager.LoadScene("Scene1");
+        loadingScreen("Scene1");
         mp.audioSource.clip = mp.music[1];
         mp.audioSource.Play();
     }
@@ -219,6 +219,44 @@ public class GameManager : MonoBehaviour
         usePotion = (KeyCode) System.Enum.Parse(typeof(KeyCode), controls[4]);
         changePotion = (KeyCode) System.Enum.Parse(typeof(KeyCode), controls[5]);
         dash = (KeyCode) System.Enum.Parse(typeof(KeyCode), controls[6]);
+    }
+    
+    public void saveAchievements()
+    {
+        string save = "";
+        
+        save += GameManager.instance.stage3.ToString() + "|";
+        save += GameManager.instance.mc.ending1.ToString() + "|";
+        save += GameManager.instance.mc.ending2.ToString() + "|";
+        
+        PlayerPrefs.SetString("Achievements",save);
+    }
+
+    public void loadingScreen(string SceneName)
+    {
+        StartCoroutine(LoadSceneAsync(SceneName));
+    }
+
+    private IEnumerator LoadSceneAsync(string SceneName)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(SceneName);
+
+        mc.loadingScreen.SetTrigger("show");
+
+        while(!operation.isDone)
+        {
+            float progressValue = Mathf.Clamp01(operation.progress / 0.9f);
+            mc.progressBar.fillAmount = progressValue;
+
+            yield return null;
+        }
+        
+        mc.loadingScreen.SetTrigger("hide");
+    }
+
+    public void deleteData()
+    {
+        PlayerPrefs.DeleteAll();
     }
 
     public void exit()

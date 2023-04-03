@@ -24,6 +24,7 @@ public class Boss : Enemy
             GameManager.instance.stage2 = true;
         } else {
             GameManager.instance.stage3 = true;
+            GameManager.instance.saveAchievements();
         }
 
         GameManager.instance.menuOpen = true;
