@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public bool stage1 = false;
     public bool stage2 = false;
     public bool stage3 = false;
+    public bool extra = false;
 
     public KeyCode attack;
     public KeyCode jump;
@@ -225,8 +226,11 @@ public class GameManager : MonoBehaviour
     {
         string save = "";
         
+        save += GameManager.instance.stage1.ToString() + "|";
+        save += GameManager.instance.stage2.ToString() + "|";
         save += GameManager.instance.stage3.ToString() + "|";
         save += GameManager.instance.mc.ending1.ToString() + "|";
+        save += GameManager.instance.mc.ending2.ToString() + "|";
         save += GameManager.instance.mc.ending2.ToString() + "|";
         
         PlayerPrefs.SetString("Achievements",save);

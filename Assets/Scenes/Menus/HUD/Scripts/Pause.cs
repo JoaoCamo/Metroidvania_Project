@@ -15,6 +15,7 @@ public class Pause : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape) && !GameManager.instance.menuOpen)
         {
+            Time.timeScale = 0;
             animator.SetTrigger("show");
             GameManager.instance.menuOpen = true;
         }
@@ -22,6 +23,7 @@ public class Pause : MonoBehaviour
 
     public void exitMenu()
     {
+        Time.timeScale = 1;
         animator.SetTrigger("hide");
         GameManager.instance.menuOpen = false;
     }

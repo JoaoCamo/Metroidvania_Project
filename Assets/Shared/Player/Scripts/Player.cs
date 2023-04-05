@@ -89,8 +89,8 @@ public class Player : Movement
         animator.SetTrigger("respawn");
         hitpoint = maxHitpoint;
         HealthBarChange();
-        alive = true;
         lastImmune = Time.time;
+        alive = true;
     }
 
     public void startCombo()
