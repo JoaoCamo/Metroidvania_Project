@@ -18,7 +18,7 @@ public class Ending : MonoBehaviour
         animator.SetTrigger("show");
         endingText.text = "Você escolheu se juntar aos vampiros, trazendo uma nova era de sombras";
         GameManager.instance.mc.ending1 = true;
-        GameManager.instance.saveAchievements();
+        GameManager.instance.saveAchievements(3);
     }
 
     public void nonVampireEnding()
@@ -26,7 +26,7 @@ public class Ending : MonoBehaviour
         animator.SetTrigger("show");
         endingText.text = "Você rejeitou a oferta do vampiro, e apos o derrotar os vampiros restantes fogem. Trazendo um fim a essa loucura, por enquanto...";
         GameManager.instance.mc.ending2 = true;
-        GameManager.instance.saveAchievements();
+        GameManager.instance.saveAchievements(4);
     }
 
     public void endingReturnToMainMenu()

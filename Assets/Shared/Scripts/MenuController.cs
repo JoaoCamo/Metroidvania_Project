@@ -14,4 +14,5 @@ public class MenuController : MonoBehaviour
     public bool initialDialog = false;
     public bool ending1 = false;
     public bool ending2 = false;
+    public bool extra = false;
 }

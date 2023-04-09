@@ -20,11 +20,13 @@ public class Boss : Enemy
         if(stage1)
         {
             GameManager.instance.stage1 = true;
+            GameManager.instance.saveAchievements(0);
         } else if(stage2) {
             GameManager.instance.stage2 = true;
+            GameManager.instance.saveAchievements(1);
         } else {
             GameManager.instance.stage3 = true;
-            GameManager.instance.saveAchievements();
+            GameManager.instance.saveAchievements(2);
         }
 
         GameManager.instance.menuOpen = true;

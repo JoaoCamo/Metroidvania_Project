@@ -5,16 +5,24 @@ using UnityEngine;
 public class Parallax : MonoBehaviour
 {
     public float xSpeed;
-    void LateUpdate()
+    private Vector3 lastPos;
+
+    private void FixedUpdate()
     {
-        if (!GameManager.instance.menuOpen && !GameManager.instance.player.attacking)
+        move();
+    }
+
+    private void move()
+    {
+        float xInput = Input.GetAxisRaw("Horizontal");
+        if (Camera.main.transform.position.x != lastPos.x)
         {
-            float xInput = Input.GetAxisRaw("Horizontal");
             Vector3 movement = new Vector3(xInput * xSpeed * Time.deltaTime, 0, 0);
             if (movement.x > 0 || movement.x < 0)
             {
                 transform.Translate(movement);
             }
         }
+        lastPos = Camera.main.transform.position;
     }
 }

@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: 9e8ce6155c1381d49a336464b48bd5ae
   - enabled: 1
     path: Assets/Scenes/Gameplay/Scene1/Scene1.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    guid: 5d2f9d3d57cbac34d98faea25fda2923
   - enabled: 1
     path: Assets/Scenes/Gameplay/Scene2/Stage1.unity
     guid: f163f5a4dbd84904e959f1f04458815d
@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gameplay/Scene5/Stage4.unity
     guid: c9410e41fa5db934686093212cfb0fe5
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Extra/Extra.unity
+    guid: c91744340f360374b9c0982132cb2db6
   m_configObjects: {}
