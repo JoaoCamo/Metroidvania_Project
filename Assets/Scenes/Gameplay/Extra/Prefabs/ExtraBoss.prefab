@@ -218,7 +218,7 @@ MonoBehaviour:
     maxNormalAngle: 0
   damage: 30
   pushForce: 15
-  hasAttackAni: 0
+  hasAttackAni: 1
   canHit: 1
 --- !u!114 &2627150032666581598
 MonoBehaviour:
