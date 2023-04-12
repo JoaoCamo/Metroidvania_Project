@@ -8,7 +8,6 @@ public class Projectile : Collidable
     private float pushForce = 5f;
     public bool active;
     public int type;
-    public Vector2 direction;
     public float speed;
 
     protected override void OnCollide(Collider2D coll)
@@ -32,7 +31,7 @@ public class Projectile : Collidable
 
     private void FixedUpdate()
     {
-        transform.Translate(direction * speed * Time.deltaTime);
+        transform.Translate( 0f,speed * Time.deltaTime,0f);
     }
 
     public void Show()

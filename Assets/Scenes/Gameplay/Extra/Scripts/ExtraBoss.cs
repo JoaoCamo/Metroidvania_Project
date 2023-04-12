@@ -45,8 +45,14 @@ public class ExtraBoss : Fighter
                 }
                 count = 0;
             } else {
-                yield return new WaitForSeconds(0.3f);
-                gameObject.GetComponent<Danmaku>().shot4();
+                yield return new WaitForSeconds(4f);
+                while (count < 50)
+                {
+                    yield return new WaitForSeconds(0.1f);
+                    gameObject.GetComponent<Danmaku>().shot4();
+                    count++;
+                }
+                count = 0;
             }
             StartCoroutine(Fire());
         }

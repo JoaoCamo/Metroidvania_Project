@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5749612728143083672}
   - component: {fileID: 5613865070994689879}
   - component: {fileID: 5124734148167125581}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bullet (2)
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,5 +161,4 @@ MonoBehaviour:
     maxNormalAngle: 0
   active: 0
   type: 0
-  direction: {x: 0, y: 0}
   speed: 0

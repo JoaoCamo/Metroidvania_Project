@@ -11,15 +11,9 @@ public class Danmaku : MonoBehaviour
     public void shot1()
     {
         angle = 0f;
-        for (int i = 0; i < 8 + 1; i++)
+        for (int i = 0; i < 7 + 1; i++)
         {
-            float bulletDirX = transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180f);
-            float bulletDirY = transform.position.y + Mathf.Cos((angle * Mathf.PI) / 180f);
-
-            Vector3 bulletMoveVector = new Vector3(bulletDirX, bulletDirY, 0f);
-            Vector2 bulletDirection = (bulletMoveVector - transform.position).normalized;
-
-            pm.show(0, bulletDirection, 1f, transform.position, transform.rotation);
+            pm.show(0, 1f, transform.position, -angle);
 
             angle += 45;
         }
@@ -27,13 +21,7 @@ public class Danmaku : MonoBehaviour
 
     public void shot2()
     {
-        float bulletDirX = transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180f);
-        float bulletDirY = transform.position.y + Mathf.Cos((angle * Mathf.PI) / 180f);
-
-        Vector3 bulletMoveVector = new Vector3(bulletDirX, bulletDirY, 0f);
-        Vector2 bulletDirection = (bulletMoveVector - transform.position).normalized;
-
-        pm.show(1, bulletDirection, 1f, transform.position, transform.rotation);
+        pm.show(2, 1f, transform.position, -angle);
 
         angle += 30f;
     }
@@ -43,13 +31,7 @@ public class Danmaku : MonoBehaviour
         angle = 0f;
         for (int i = 0; i < 8 + 1; i++)
         {
-            float bulletDirX = transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180f);
-            float bulletDirY = transform.position.y + Mathf.Cos((angle * Mathf.PI) / 180f);
-
-            Vector3 bulletMoveVector = new Vector3(bulletDirX, bulletDirY, 0f);
-            Vector2 bulletDirection = (bulletMoveVector - transform.position).normalized;
-
-            pm.show(1, bulletDirection, 1f, transform.position, transform.rotation);
+            pm.show(3, 1f, transform.position, -angle);
 
             angle += 45;
         }
@@ -57,20 +39,16 @@ public class Danmaku : MonoBehaviour
 
     public void shot4()
     {
-        for (int i = 0; i < 3 + 1; i++)
+        for (int i = 0; i < 2 + 1; i++)
         {
-            float bulletDirX = transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180f);
-            float bulletDirY = transform.position.y + Mathf.Cos((angle * Mathf.PI) / 180f);
+            pm.show(1, -1f, transform.position, angle);
 
-            Vector3 bulletMoveVector = new Vector3(bulletDirX, bulletDirY, 0f);
-            Vector2 bulletDirection = (bulletMoveVector - transform.position).normalized;
-
-            pm.show(2, bulletDirection, 1f, transform.position, transform.rotation);
-
-            angle += 20;
-            if(i == 1)
+            if (i == 2)
             {
-                angle += 140;
+                angle += 20;
+            } else
+            {
+                angle += 120;
             }
         }
     }
