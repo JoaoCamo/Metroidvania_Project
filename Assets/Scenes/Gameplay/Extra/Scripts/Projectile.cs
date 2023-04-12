@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : Collidable
 {
     private int damage = 10;
-    private float pushForce = 7.5f;
+    private float pushForce = 5f;
     public bool active;
     public int type;
     public Vector2 direction;

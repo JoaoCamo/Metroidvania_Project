@@ -21,7 +21,6 @@ public class GameManager : MonoBehaviour
     public bool stage1 = false;
     public bool stage2 = false;
     public bool stage3 = false;
-    public bool extra = false;
 
     public KeyCode attack;
     public KeyCode jump;
@@ -222,18 +221,42 @@ public class GameManager : MonoBehaviour
         dash = (KeyCode) System.Enum.Parse(typeof(KeyCode), controls[6]);
     }
     
-    public void saveAchievements()
+    public void saveAchievements(int index)
     {
         string save = "";
         
-        save += GameManager.instance.stage1.ToString() + "|";
-        save += GameManager.instance.stage2.ToString() + "|";
-        save += GameManager.instance.stage3.ToString() + "|";
-        save += GameManager.instance.mc.ending1.ToString() + "|";
-        save += GameManager.instance.mc.ending2.ToString() + "|";
-        save += GameManager.instance.mc.ending2.ToString() + "|";
+        if(PlayerPrefs.HasKey("Achievements"))
+        {
+            save = addAchievement(index);
+        } else {
+            save += GameManager.instance.stage1.ToString() + "|";
+            save += GameManager.instance.stage2.ToString() + "|";
+            save += GameManager.instance.stage3.ToString() + "|";
+            save += GameManager.instance.mc.ending1.ToString() + "|";
+            save += GameManager.instance.mc.ending2.ToString() + "|";
+            save += GameManager.instance.mc.extra.ToString() + "|";
+        }
         
         PlayerPrefs.SetString("Achievements",save);
+    }
+
+    public string addAchievement(int index)
+    {
+        string save = "";
+        string[] data = PlayerPrefs.GetString("Achievements").Split("|");
+    
+        for(int i=0; i<6; i++)
+        {
+            if(i!=index)
+            {
+                save += data[i] + "|";
+            } else {
+                data[i] = "True" + "|";
+                save += data[i];
+            }
+        }
+
+        return save;
     }
 
     public void loadingScreen(string SceneName)

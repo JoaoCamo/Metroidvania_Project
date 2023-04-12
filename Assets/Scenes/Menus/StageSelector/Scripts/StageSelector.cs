@@ -51,6 +51,7 @@ public class StageSelector : MonoBehaviour
         GameManager.instance.loadingScreen("Stage1");
         GameManager.instance.mp.audioSource.clip = GameManager.instance.mp.music[2];
         GameManager.instance.mp.audioSource.Play();
+        exitMenu();
     }
 
     public void loadStage2()
@@ -61,6 +62,7 @@ public class StageSelector : MonoBehaviour
             GameManager.instance.loadingScreen("Stage2");
             GameManager.instance.mp.audioSource.clip = GameManager.instance.mp.music[3];
             GameManager.instance.mp.audioSource.Play();
+            exitMenu();
         }
     }
 
@@ -72,6 +74,7 @@ public class StageSelector : MonoBehaviour
             GameManager.instance.loadingScreen("Stage3");
             GameManager.instance.mp.audioSource.clip = GameManager.instance.mp.music[4];
             GameManager.instance.mp.audioSource.Play();
+            exitMenu();
         }
     }
 
@@ -83,6 +86,7 @@ public class StageSelector : MonoBehaviour
             GameManager.instance.loadingScreen("Stage4");
             GameManager.instance.mp.audioSource.clip = GameManager.instance.mp.music[5];
             GameManager.instance.mp.audioSource.Play();
+            exitMenu();
         }
     }
 }
