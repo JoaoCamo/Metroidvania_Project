@@ -56,7 +56,7 @@ public class Achievements : MonoBehaviour
             if (bool.Parse(data[3]))
             {
                 images[0].sprite = achievementsSprites[3];
-                achievementsTexts[0].text = "Final 1\nEscolheu se juntar aos vampiros";
+                achievementsTexts[0].text = "Final 1\nTornou-se um deles";
             }
             if (bool.Parse(data[4]))
             {
@@ -66,7 +66,7 @@ public class Achievements : MonoBehaviour
             if (bool.Parse(data[5]))
             {
                 images[2].sprite = achievementsSprites[5];
-                achievementsTexts[2].text = "Final Extra\nFlandre Scarlet estaria orgulhosa";
+                achievementsTexts[2].text = "Final Extra\nFlandre Scarlet está orgulhosa";
             }
         }
         buttons[0].SetActive(true);

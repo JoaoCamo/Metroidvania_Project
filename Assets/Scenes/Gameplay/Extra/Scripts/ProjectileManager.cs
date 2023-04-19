@@ -1,20 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ProjectileManager : MonoBehaviour
 {
     public GameObject[] bulletPrefab;
     private List<GameObject> bullets = new List<GameObject>();
 
-    public void show(int type, Vector2 dir, float speed, Vector3 position, Quaternion rotation)
+    public void show(int type, float speed, Vector3 position, float rotation)
     {
         GameObject bullet = getBullet(type);
 
         bullet.transform.position = position;
-        bullet.transform.rotation = rotation;
+        bullet.transform.rotation = Quaternion.Euler(transform.rotation.x,transform.rotation.y, rotation);
         bullet.GetComponent<Projectile>().type = type;
-        bullet.GetComponent<Projectile>().direction = dir;
         bullet.GetComponent<Projectile>().speed = speed;
 
         bullet.GetComponent<Projectile>().Show();
@@ -32,10 +32,5 @@ public class ProjectileManager : MonoBehaviour
         }
 
         return bullet;
-    }
-
-    public void clearBullets()
-    {
-        bullets.Clear();
     }
 }

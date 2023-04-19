@@ -47,6 +47,7 @@ public class PlayerJump : MonoBehaviour
             doubleJumped = false;
             isGrounded = true;
             animator.SetTrigger("hitGround");
+            animator.ResetTrigger("fall");
         }
     }
 
@@ -56,6 +57,7 @@ public class PlayerJump : MonoBehaviour
         if(other.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
+            animator.SetTrigger("fall");
             animator.ResetTrigger("hitGround");
             animator.ResetTrigger("jump");
         }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ExtraBoss : Fighter
 {
+    private bool alive = true;
     protected BoxCollider2D BoxCollider;
     protected Animator animator;
     private ExtraBossHUD HUD;
@@ -25,27 +26,36 @@ public class ExtraBoss : Fighter
 
     private IEnumerator Fire()
     {
-        if(stage1)
+        if (alive)
         {
-            yield return new WaitForSeconds(2f);
-            gameObject.GetComponent<Danmaku>().shot1();
-        } else if(stage2){
-            yield return new WaitForSeconds(0.2f);
-            gameObject.GetComponent<Danmaku>().shot2();
-        } else if(stage3) {
-            yield return new WaitForSeconds(3f);
-            while(count < 10)
+            if(stage1)
             {
-                yield return new WaitForSeconds(0.1f);
-                gameObject.GetComponent<Danmaku>().shot3();
-                count++;
+                yield return new WaitForSeconds(2f);
+                gameObject.GetComponent<Danmaku>().shot1();
+            } else if(stage2){
+                yield return new WaitForSeconds(0.2f);
+                gameObject.GetComponent<Danmaku>().shot2();
+            } else if(stage3) {
+                yield return new WaitForSeconds(3f);
+                while(count < 10)
+                {
+                    yield return new WaitForSeconds(0.1f);
+                    gameObject.GetComponent<Danmaku>().shot3();
+                    count++;
+                }
+                count = 0;
+            } else {
+                yield return new WaitForSeconds(4f);
+                while (count < 50)
+                {
+                    yield return new WaitForSeconds(0.1f);
+                    gameObject.GetComponent<Danmaku>().shot4();
+                    count++;
+                }
+                count = 0;
             }
-            count = 0;
-        } else {
-            yield return new WaitForSeconds(0.3f);
-            gameObject.GetComponent<Danmaku>().shot4();
+            StartCoroutine(Fire());
         }
-        StartCoroutine(Fire());
     }
 
     protected override void ReceiveDamage(Damage dmg)
@@ -88,13 +98,14 @@ public class ExtraBoss : Fighter
 
     protected override void death()
     {
+        alive = false;
         animator.SetTrigger("dead");
         gameObject.GetComponent<EnemyHitBox>().canHit = false;
-        extraEnd.extraEnding();
     }
 
     public void destroy()
     {
+        extraEnd.extraEnding();
         Destroy(gameObject);
     }
 }

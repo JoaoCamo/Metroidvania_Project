@@ -179,7 +179,7 @@ TextureImporter:
         width: 12
         height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -187,6 +187,94 @@ TextureImporter:
       bones: []
       spriteID: a6ed7fcfc309abc4c911b7f93c4b4bde
       internalID: 572490065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Touhou Koumakyou The Embodiment of Scarlet Devil - Projectiles
+        & Items_4
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 338
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91b2279122a00e14498cd94089be388a
+      internalID: 1211836411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Touhou Koumakyou The Embodiment of Scarlet Devil - Projectiles
+        & Items_5
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 338
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd4e5bc5eeffdfe48a42333f262b7ad0
+      internalID: -1573847949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Touhou Koumakyou The Embodiment of Scarlet Devil - Projectiles
+        & Items_6
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 338
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02ce15d0b01b67b4b839c93ffb29800b
+      internalID: -914178325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Touhou Koumakyou The Embodiment of Scarlet Devil - Projectiles
+        & Items_7
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 338
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aa5f9fbd9a1ef34ebcabfca4a6140e2
+      internalID: 1997396178
       vertices: []
       indices: 
       edges: []
@@ -202,10 +290,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      PC Computer - Touhou Koumakyou The Embodiment of Scarlet Devil - Projectiles & Items_5: -1573847949
       PC Computer - Touhou Koumakyou The Embodiment of Scarlet Devil - Projectiles & Items_2: 175273234
       PC Computer - Touhou Koumakyou The Embodiment of Scarlet Devil - Projectiles & Items_0: -1334650856
       PC Computer - Touhou Koumakyou The Embodiment of Scarlet Devil - Projectiles & Items_3: 572490065
+      PC Computer - Touhou Koumakyou The Embodiment of Scarlet Devil - Projectiles & Items_6: -914178325
+      PC Computer - Touhou Koumakyou The Embodiment of Scarlet Devil - Projectiles & Items_4: 1211836411
       PC Computer - Touhou Koumakyou The Embodiment of Scarlet Devil - Projectiles & Items_1: -841269002
+      PC Computer - Touhou Koumakyou The Embodiment of Scarlet Devil - Projectiles & Items_7: 1997396178
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

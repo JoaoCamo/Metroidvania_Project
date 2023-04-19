@@ -13,6 +13,7 @@ public class ExtraBossTrigger : MonoBehaviour
         {
             GameManager.instance.mp.audioSource.clip = GameManager.instance.mp.music[8];
             GameManager.instance.mp.audioSource.Play();
+            coll.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
             extraBossHealthBarAni.SetTrigger("show");
             isPlaying = true;
         }
